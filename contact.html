@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sigbot — Contact</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="nav">
+      <div class="brand">
+  <a href="index.html">
+    <img src="assets/robot.svg" alt="" aria-hidden="true">
+    SIGBOT
+  </a>
+</div>
+      <div class="navlinks">
+        <a href="index.html">Home</a>
+        <a href="download.html">Download</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="faq.html">FAQ</a>
+        <a class="active" href="contact.html">Contact</a>
+      </div>
+    </div>
+
+    <div class="header">
+      <div class="kicker">Contact</div>
+      <h1 class="h1">Support / sales.</h1>
+      <p class="sub">Email is simplest. If you want a form, plug in Formspree later.</p>
+    </div>
+
+    <div class="list">
+      <div class="row">
+        <div class="left">
+          <div class="label">Email</div>
+          <div class="hint"><a href="mailto:support@sigbot.com">support@sigbot.com</a> (change this)</div>
+        </div>
+        <div class="badge">→</div>
+      </div>
+      <div class="row">
+        <div class="left">
+          <div class="label">Demo</div>
+          <div class="hint">Send a short note with your company + mailbox count.</div>
+        </div>
+        <div class="badge">→</div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div>© <span id="y"></span> Sigbot</div>
+      <div class="small"><a href="download.html">Download</a> · <a href="pricing.html">Pricing</a></div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

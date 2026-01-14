@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SIGBOT</title>
+  <meta name="description" content="Turn email signatures into structured contacts." />
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="nav">
+      <div class="brand">
+        <a href="index.html">
+          <img src="assets/robot.svg" alt="" aria-hidden="true">
+          SIGBOT
+        </a>
+      </div>
+
+      <!-- Home is now a single page: jump to sections -->
+      <div class="navlinks">
+        <a class="active" href="#top">Home</a>
+        <a href="#download">Download</a>
+        <a href="#what">What</a>
+        <a href="#who">Who</a>
+        <a href="#security">Security</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+
+    <div class="header anchor" id="top">
+      <div class="kicker">SIGBOT</div>
+      <h1 class="h1">Email signature capture → structured contacts.</h1>
+      <p class="sub">Minimal, fast, and built for busy construction teams.</p>
+    </div>
+
+    <hr class="hr" />
+
+    <!-- DOWNLOAD -->
+    <section class="section anchor" id="download">
+      <div class="section-head">
+        <p class="section-title">Download</p>
+        <div class="section-link"><a href="#top">Back to top</a></div>
+      </div>
+
+      <div class="btnrow">
+        <a class="btn" href="download.html">Download for Mac (DMG)</a>
+        <a class="btn" href="download.html">Download for Windows (EXE)</a>
+      </div>
+      <p class="small">Latest stable release. Install in under a minute.</p>
+
+      <div class="list">
+        <div class="row">
+          <div class="left">
+            <div class="label"><a href="download.html#releases">Release notes</a></div>
+            <div class="hint">What changed</div>
+          </div>
+          <div class="badge">→</div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="hr" />
+
+    <!-- WHAT -->
+    <section class="section anchor" id="what">
+      <div class="section-head">
+        <p class="section-title">What it does</p>
+        <div class="section-link"><a href="#top">Back to top</a></div>
+      </div>
+
+      <div class="list">
+        <div class="row">
+          <div class="left">
+            <div class="label">Parse signatures</div>
+            <div class="hint">Name, company, title, phone, email</div>
+          </div>
+          <div class="badge">01</div>
+        </div>
+        <div class="row">
+          <div class="left">
+            <div class="label">Deduplicate</div>
+            <div class="hint">Keep one clean record per contact</div>
+          </div>
+          <div class="badge">02</div>
+        </div>
+        <div class="row">
+          <div class="left">
+            <div class="label">Export</div>
+            <div class="hint">CSV export for your tools</div>
+          </div>
+          <div class="badge">03</div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="hr" />
+
+    <!-- WHO -->
+    <section class="section anchor" id="who">
+      <div class="section-head">
+        <p class="section-title">Who it’s for</p>
+        <div class="section-link"><a href="#top">Back to top</a></div>
+      </div>
+
+      <div class="list">
+        <div class="row">
+          <div class="left">
+            <div class="label">Project managers</div>
+            <div class="hint">Keep vendor contacts organized</div>
+          </div>
+          <div class="badge">→</div>
+        </div>
+        <div class="row">
+          <div class="left">
+            <div class="label">Estimators</div>
+            <div class="hint">Build bid lists from real emails</div>
+          </div>
+          <div class="badge">→</div>
+        </div>
+        <div class="row">
+          <div class="left">
+            <div class="label">Contract admins</div>
+            <div class="hint">Less manual data entry</div>
+          </div>
+          <div class="badge">→</div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="hr" />
+
+    <!-- SECURITY -->
+    <section class="section anchor" id="security">
+      <div class="section-head">
+        <p class="section-title">Security</p>
+        <div class="section-link"><a href="#top">Back to top</a></div>
+      </div>
+
+      <div class="list">
+        <div class="row">
+          <div class="left">
+            <div class="label">Local-first</div>
+            <div class="hint">Database stored on your machine by default (edit if not true)</div>
+          </div>
+          <div class="badge">•</div>
+        </div>
+        <div class="row">
+          <div class="left">
+            <div class="label">Clear exports</div>
+            <div class="hint">You control what leaves your machine</div>
+          </div>
+          <div class="badge">•</div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="hr" />
+
+    <!-- CONTACT -->
+    <section class="section anchor" id="contact">
+      <div class="section-head">
+        <p class="section-title">Contact</p>
+        <div class="section-link"><a href="#top">Back to top</a></div>
+      </div>
+
+      <div class="list">
+        <div class="row">
+          <div class="left">
+            <div class="label">Support</div>
+            <div class="hint"><a href="mailto:support@sigbot.com">support@sigbot.com</a> (change this)</div>
+          </div>
+          <div class="badge">→</div>
+        </div>
+        <div class="row">
+          <div class="left">
+            <div class="label">Team rollout</div>
+            <div class="hint">Send company + mailbox count</div>
+          </div>
+          <div class="badge">→</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer">
+      <div>© <span id="y"></span> SIGBOT</div>
+      <div class="small">
+        <a href="download.html">Download</a> · <a href="pricing.html">Pricing</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
