@@ -3,19 +3,20 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sigbot — Download</title>
+  <title>SIGBOT — Download</title>
   <meta name="description" content="Download Sigbot for Mac or Windows." />
   <link rel="stylesheet" href="assets/styles.css" />
 </head>
 <body>
   <div class="container">
+
     <div class="nav">
-<div class="brand">
-  <a href="index.html">
-    <img src="assets/robot.svg" alt="" aria-hidden="true">
-    SIGBOT
-  </a>
-</div>
+      <div class="brand">
+        <a href="index.html">
+          <img src="assets/robot.svg" alt="" aria-hidden="true">
+          SIGBOT
+        </a>
+      </div>
       <div class="navlinks">
         <a href="index.html">Home</a>
         <a class="active" href="download.html">Download</a>
@@ -25,93 +26,95 @@
       </div>
     </div>
 
-    <div class="header">
-      <div class="kicker">Download</div>
-      <h1 class="h1">Sigbot — latest stable release.</h1>
-      <p class="sub">Choose your platform. Install in under a minute.</p>
+    <div class="page">
+      <h1 class="pageTitle">Download</h1>
+      <p class="pageSub">Latest stable build. Simple install. No fluff.</p>
 
-      <div class="btnrow">
-        <a class="btn" href="#" id="macLink">Download for Mac (DMG)</a>
-        <a class="btn" href="#" id="winLink">Download for Windows (EXE)</a>
-      </div>
-      <p class="small">Tip: host installers on GitHub Releases or Cloudflare R2 for fast downloads.</p>
-    </div>
+      <div class="twoCol">
+        <!-- Left: actions -->
+        <div class="panel">
+          <p class="panelTitle">Get Sigbot</p>
 
-    <hr class="hr" />
-
-    <div class="grid">
-      <div>
-        <div class="section-title">System requirements</div>
-        <div class="list">
-          <div class="row">
-            <div class="left">
-              <div class="label">macOS</div>
-              <div class="hint">macOS 13+ (Intel or Apple Silicon)</div>
-            </div>
-            <div class="badge">Mac</div>
+          <div class="btnrow">
+            <!-- TODO: replace href with real installer links -->
+            <a class="btnPrimary" href="#" id="macLink">Download for Mac (DMG)</a>
+            <a class="btnGhost" href="#" id="winLink">Download for Windows (EXE)</a>
           </div>
-          <div class="row">
-            <div class="left">
-              <div class="label">Windows</div>
-              <div class="hint">Windows 10/11</div>
+
+          <p class="note">
+            If your company blocks downloads, use a GitHub Releases link or ask IT to allow the installer source.
+          </p>
+        </div>
+
+        <!-- Right: quick info -->
+        <div class="panel">
+          <p class="panelTitle">Requirements</p>
+          <div class="kv">
+            <div class="kvRow">
+              <div class="kvKey">macOS</div>
+              <div class="kvVal">13+ (Intel / Apple Silicon)</div>
             </div>
-            <div class="badge">Win</div>
+            <div class="kvRow">
+              <div class="kvKey">Windows</div>
+              <div class="kvVal">10 / 11</div>
+            </div>
+            <div class="kvRow">
+              <div class="kvKey">Install time</div>
+              <div class="kvVal">~1 minute</div>
+            </div>
           </div>
         </div>
       </div>
 
-      <div>
-        <div class="section-title">Install</div>
-        <div class="list">
-          <div class="row">
-            <div class="left">
-              <div class="label">1. Download</div>
-              <div class="hint">Get the DMG/EXE above</div>
+      <div style="height:16px"></div>
+
+      <div class="twoCol">
+        <div class="panel">
+          <p class="panelTitle">Install</p>
+          <div class="kv">
+            <div class="kvRow">
+              <div class="kvKey">1</div>
+              <div class="kvVal">Download the installer</div>
             </div>
-            <div class="badge">01</div>
-          </div>
-          <div class="row">
-            <div class="left">
-              <div class="label">2. Open</div>
-              <div class="hint">Follow the prompts</div>
+            <div class="kvRow">
+              <div class="kvKey">2</div>
+              <div class="kvVal">Open and follow prompts</div>
             </div>
-            <div class="badge">02</div>
-          </div>
-          <div class="row">
-            <div class="left">
-              <div class="label">3. Launch</div>
-              <div class="hint">Grant permissions if requested</div>
+            <div class="kvRow">
+              <div class="kvKey">3</div>
+              <div class="kvVal">Launch Sigbot</div>
             </div>
-            <div class="badge">03</div>
+            <div class="kvRow">
+              <div class="kvKey">4</div>
+              <div class="kvVal">Grant permissions if requested</div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
 
-    <hr class="hr" />
-
-    <div id="releases">
-      <div class="section-title">Release notes</div>
-      <div class="list">
-        <div class="row">
-          <div class="left">
-            <div class="label">v0.1.0</div>
-            <div class="hint">Initial release.</div>
+        <div class="panel" id="releases">
+          <p class="panelTitle">Release notes</p>
+          <div class="kv">
+            <div class="kvRow">
+              <div class="kvKey">v0.1.0</div>
+              <div class="kvVal">Initial release</div>
+            </div>
           </div>
-          <div class="badge">—</div>
+          <p class="note">Update this section as you ship.</p>
         </div>
       </div>
-      <p class="small">Update this section as you ship.</p>
     </div>
 
     <div class="footer">
-      <div>Need help? <a href="contact.html">Contact support</a></div>
-      <div class="small"><a href="index.html">Home</a> · <a href="faq.html">FAQ</a></div>
+      <div>© <span id="y"></span> SIGBOT</div>
+      <div class="small"><a href="index.html">Home</a> · <a href="pricing.html">Pricing</a></div>
     </div>
+
   </div>
 
   <script>
-    // OPTIONAL: set real links here without editing the HTML
+    document.getElementById("y").textContent = new Date().getFullYear();
+
+    // OPTIONAL: set real links here without editing HTML later
     // document.getElementById("macLink").href = "https://github.com/yourorg/sigbot/releases/latest/download/Sigbot.dmg";
     // document.getElementById("winLink").href = "https://github.com/yourorg/sigbot/releases/latest/download/Sigbot.exe";
   </script>

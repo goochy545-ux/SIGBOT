@@ -3,18 +3,20 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sigbot — Pricing</title>
+  <title>SIGBOT — Pricing</title>
+  <meta name="description" content="Sigbot pricing for individuals and teams." />
   <link rel="stylesheet" href="assets/styles.css" />
 </head>
 <body>
   <div class="container">
+
     <div class="nav">
-<div class="brand">
-  <a href="index.html">
-    <img src="assets/robot.svg" alt="" aria-hidden="true">
-    SIGBOT
-  </a>
-</div>
+      <div class="brand">
+        <a href="index.html">
+          <img src="assets/robot.svg" alt="" aria-hidden="true">
+          SIGBOT
+        </a>
+      </div>
       <div class="navlinks">
         <a href="index.html">Home</a>
         <a href="download.html">Download</a>
@@ -24,34 +26,90 @@
       </div>
     </div>
 
-    <div class="header">
-      <div class="kicker">Pricing</div>
-      <h1 class="h1">Simple pricing.</h1>
-      <p class="sub">If you’re piloting Sigbot, start with the free download. For teams, contact us.</p>
-    </div>
+    <div class="page">
+      <h1 class="pageTitle">Pricing</h1>
+      <p class="pageSub">Straightforward. Start with the download. Upgrade when you roll out to a team.</p>
 
-    <div class="list">
-      <div class="row">
-        <div class="left">
-          <div class="label">Individual</div>
-          <div class="hint">Download and try it.</div>
+      <div class="twoCol">
+        <div class="panel">
+          <p class="panelTitle">Individual</p>
+          <div class="kv">
+            <div class="kvRow">
+              <div class="kvKey">Best for</div>
+              <div class="kvVal">Trying Sigbot</div>
+            </div>
+            <div class="kvRow">
+              <div class="kvKey">Includes</div>
+              <div class="kvVal">Core parsing + export</div>
+            </div>
+            <div class="kvRow">
+              <div class="kvKey">Price</div>
+              <div class="kvVal">$0 (beta)</div>
+            </div>
+          </div>
+
+          <div class="btnrow" style="margin-top:14px">
+            <a class="btnPrimary" href="download.html">Download</a>
+            <a class="btnGhost" href="faq.html">FAQ</a>
+          </div>
         </div>
-        <div class="badge">$0 (beta)</div>
+
+        <div class="panel">
+          <p class="panelTitle">Team</p>
+          <div class="kv">
+            <div class="kvRow">
+              <div class="kvKey">Best for</div>
+              <div class="kvVal">Company rollout</div>
+            </div>
+            <div class="kvRow">
+              <div class="kvKey">Includes</div>
+              <div class="kvVal">Support + deployment help</div>
+            </div>
+            <div class="kvRow">
+              <div class="kvKey">Price</div>
+              <div class="kvVal">Custom</div>
+            </div>
+          </div>
+
+          <div class="btnrow" style="margin-top:14px">
+            <a class="btnPrimary" href="contact.html">Request pricing</a>
+            <a class="btnGhost" href="mailto:support@sigbot.com">Email</a>
+          </div>
+
+          <p class="note">If you email, include company name + approximate mailbox count.</p>
+        </div>
       </div>
-      <div class="row">
-        <div class="left">
-          <div class="label">Team</div>
-          <div class="hint">Centralized rollout + support.</div>
+
+      <div style="height:16px"></div>
+
+      <div class="panel">
+        <p class="panelTitle">Notes</p>
+        <div class="kv">
+          <div class="kvRow">
+            <div class="kvKey">Data</div>
+            <div class="kvVal">Local-first (if true for your app)</div>
+          </div>
+          <div class="kvRow">
+            <div class="kvKey">Billing</div>
+            <div class="kvVal">Only for team deployments</div>
+          </div>
+          <div class="kvRow">
+            <div class="kvKey">Support</div>
+            <div class="kvVal">Email support available</div>
+          </div>
         </div>
-        <div class="badge"><a href="contact.html">Contact</a></div>
       </div>
     </div>
 
     <div class="footer">
-      <div>© <span id="y"></span> Sigbot</div>
+      <div>© <span id="y"></span> SIGBOT</div>
       <div class="small"><a href="download.html">Download</a> · <a href="contact.html">Contact</a></div>
     </div>
+
   </div>
-  <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>

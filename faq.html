@@ -3,18 +3,20 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sigbot — FAQ</title>
+  <title>SIGBOT — FAQ</title>
+  <meta name="description" content="Answers to common Sigbot questions." />
   <link rel="stylesheet" href="assets/styles.css" />
 </head>
 <body>
   <div class="container">
+
     <div class="nav">
-<div class="brand">
-  <a href="index.html">
-    <img src="assets/robot.svg" alt="" aria-hidden="true">
-    SIGBOT
-  </a>
-</div>
+      <div class="brand">
+        <a href="index.html">
+          <img src="assets/robot.svg" alt="" aria-hidden="true">
+          SIGBOT
+        </a>
+      </div>
       <div class="navlinks">
         <a href="index.html">Home</a>
         <a href="download.html">Download</a>
@@ -24,40 +26,79 @@
       </div>
     </div>
 
-    <div class="header">
-      <div class="kicker">FAQ</div>
-      <h1 class="h1">Answers, quickly.</h1>
-      <p class="sub">If you don’t see it here, email us.</p>
-    </div>
+    <div class="page">
+      <h1 class="pageTitle">FAQ</h1>
+      <p class="pageSub">Quick answers. If you don’t see it, email us.</p>
 
-    <div class="list">
-      <div class="row">
-        <div class="left">
-          <div class="label">Does Sigbot upload my data?</div>
-          <div class="hint">Set this to whatever is true for your app (e.g., local-only by default).</div>
+      <div class="twoCol">
+        <!-- FAQ list -->
+        <div class="panel">
+          <p class="panelTitle">Common questions</p>
+
+          <div class="kv">
+            <div class="kvRow">
+              <div class="kvKey">Does Sigbot upload my data?</div>
+              <div class="kvVal">Set this to what’s true (e.g., local-only by default).</div>
+            </div>
+            <div class="kvRow">
+              <div class="kvKey">What does it capture?</div>
+              <div class="kvVal">Signature fields like name, title, company, phone, email.</div>
+            </div>
+            <div class="kvRow">
+              <div class="kvKey">Can I export contacts?</div>
+              <div class="kvVal">Yes — CSV export for your tools.</div>
+            </div>
+            <div class="kvRow">
+              <div class="kvKey">Does it deduplicate?</div>
+              <div class="kvVal">Yes — it keeps one clean record per contact.</div>
+            </div>
+            <div class="kvRow">
+              <div class="kvKey">How do updates work?</div>
+              <div class="kvVal">Download the latest build from the Download page.</div>
+            </div>
+          </div>
+
+          <p class="note">
+            Want a company-ready security summary? <a href="contact.html">Contact us</a>.
+          </p>
         </div>
-        <div class="badge">A</div>
-      </div>
-      <div class="row">
-        <div class="left">
-          <div class="label">Where do I find my exported contacts?</div>
-          <div class="hint">Exports to CSV (location depends on your app).</div>
+
+        <!-- quick links / troubleshooting -->
+        <div class="panel">
+          <p class="panelTitle">Troubleshooting</p>
+
+          <div class="kv">
+            <div class="kvRow">
+              <div class="kvKey">Download blocked</div>
+              <div class="kvVal">Use an approved source (e.g., GitHub Releases) or ask IT.</div>
+            </div>
+            <div class="kvRow">
+              <div class="kvKey">App won’t open (Mac)</div>
+              <div class="kvVal">Check Security & Privacy and allow the app if prompted.</div>
+            </div>
+            <div class="kvRow">
+              <div class="kvKey">Permissions</div>
+              <div class="kvVal">Grant only what’s needed for your workflow.</div>
+            </div>
+          </div>
+
+          <div class="btnrow" style="margin-top:14px">
+            <a class="btnPrimary" href="download.html">Download</a>
+            <a class="btnGhost" href="contact.html">Contact support</a>
+          </div>
         </div>
-        <div class="badge">A</div>
-      </div>
-      <div class="row">
-        <div class="left">
-          <div class="label">How do updates work?</div>
-          <div class="hint">Download the latest version from the Download page.</div>
-        </div>
-        <div class="badge">A</div>
       </div>
     </div>
 
     <div class="footer">
-      <div><a href="contact.html">Contact support</a></div>
-      <div class="small"><a href="download.html">Download</a></div>
+      <div>© <span id="y"></span> SIGBOT</div>
+      <div class="small"><a href="download.html">Download</a> · <a href="pricing.html">Pricing</a></div>
     </div>
+
   </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>

@@ -10,6 +10,8 @@
 
 *{ box-sizing: border-box; }
 html,body{ height:100%; }
+html{ scroll-behavior: smooth; }
+
 body{
   margin:0;
   background: var(--bg);
@@ -29,6 +31,7 @@ a:hover{ color: var(--hover); }
   padding: 28px var(--pad) 64px;
 }
 
+/* NAV */
 .nav{
   display:flex;
   align-items: baseline;
@@ -38,32 +41,24 @@ a:hover{ color: var(--hover); }
   border-bottom: 1px solid var(--line);
 }
 
-.brand{
-  font-weight: 650;
-  letter-spacing: 0.2px;
-}
-
 .brand a{
   display: inline-flex;
   align-items: center;
-  gap: 0.5em;           /* space scales with text */
+  gap: 0.55em;
   font-weight: 750;
   letter-spacing: 1.2px;
   text-transform: uppercase;
-  font-size: 16px;      /* controls BOTH text and robot size */
+  font-size: 16px;   /* robot matches text height */
 }
 
 .brand img{
-  height: 1em;          /* SAME height as text */
-  width: auto;          /* keep proportions */
+  height: 1em;       /* same size as text */
+  width: auto;
   display: inline-block;
   vertical-align: middle;
   filter: grayscale(100%);
   opacity: 0.9;
-  transform: translateY(0.02em);
 }
-
-
 
 .navlinks{
   display:flex;
@@ -71,19 +66,24 @@ a:hover{ color: var(--hover); }
   flex-wrap: wrap;
   justify-content: flex-end;
 }
+
 .navlinks a{
   color: var(--muted);
 }
+
 .navlinks a.active{
   color: var(--fg);
 }
+
 .navlinks a:hover{
   color: var(--hover);
 }
 
+/* HERO */
 .header{
   padding: 28px 0 18px;
 }
+
 .kicker{
   color: var(--muted);
   font-size: 12px;
@@ -91,89 +91,64 @@ a:hover{ color: var(--hover); }
   text-transform: uppercase;
   margin-bottom: 10px;
 }
+
 .h1{
   font-size: 20px;
   font-weight: 650;
   margin: 0 0 6px;
 }
+
 .sub{
   color: var(--muted);
   margin: 0;
 }
 
-.hr{
-  height:1px;
-  background: var(--line);
-  margin: 22px 0;
-  border: 0;
-}
-
-.grid{
-  display:grid;
-  grid-template-columns: 1fr;
-  gap: 18px;
-}
-
-.section-title{
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 1.4px;
-  color: var(--muted);
-  margin: 0 0 10px;
-}
-
-.list{
-  border-top: 1px solid var(--line);
-}
-.row{
-  display:flex;
-  justify-content: space-between;
+/* COLUMNS */
+.columns{
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
   gap: 16px;
-  padding: 12px 0;
-  border-bottom: 1px solid var(--line);
+  margin-top: 20px;
 }
-.row .left{
-  display:flex;
+
+.column{
+  border-left: 1px solid var(--line);
+  padding-left: 14px;
+}
+
+.column:first-child{
+  border-left: none;
+  padding-left: 0;
+}
+
+.columnTitle{
+  font-size: 12px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.columnList{
+  display: flex;
   flex-direction: column;
-  gap: 4px;
-}
-.row .label{
-  font-weight: 550;
-}
-.row .hint{
-  color: var(--muted);
-  font-size: 13px;
+  gap: 10px;
 }
 
-.badge{
-  color: var(--muted);
-  font-size: 13px;
-  white-space: nowrap;
-}
-
-.btnrow{
-  display:flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-top: 10px;
-}
-
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding: 12px 14px;
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  background: transparent;
+.columnItem{
+  font-size: 14px;
   color: var(--fg);
-  min-width: 220px;
 }
-.btn:hover{
-  border-color: #3A3A40;
+
+.columnItem a{
+  color: inherit;
+}
+
+.columnItem a:hover{
   color: var(--hover);
 }
 
+/* FOOTER */
 .small{
   color: var(--muted);
   font-size: 13px;
@@ -191,39 +166,131 @@ a:hover{ color: var(--hover); }
   font-size: 13px;
 }
 
-@media (min-width: 860px){
-  .grid{
-    grid-template-columns: 1fr 1fr;
-    gap: 28px;
+/* RESPONSIVE */
+@media (max-width: 1100px){
+  .columns{
+    grid-template-columns: repeat(3, 1fr);
   }
 }
-/* sections */
-.section{
-  padding: 22px 0 10px;
+
+@media (max-width: 760px){
+  .columns{
+    grid-template-columns: 1fr;
+  }
+  .column{
+    border-left: none;
+    padding-left: 0;
+    border-top: 1px solid var(--line);
+    padding-top: 14px;
+  }
+  .column:first-child{
+    border-top: none;
+    padding-top: 0;
+  }
+}
+/* clean page sections */
+.page{
+  padding: 22px 0 0;
 }
 
-.section-head{
-  display:flex;
-  align-items: baseline;
-  justify-content: space-between;
+.pageTitle{
+  font-size: 18px;
+  font-weight: 650;
+  margin: 0 0 6px;
+}
+
+.pageSub{
+  color: var(--muted);
+  margin: 0 0 18px;
+}
+
+.panel{
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 16px;
+}
+
+.panelTitle{
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  margin: 0 0 12px;
+}
+
+.twoCol{
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
   gap: 16px;
-  margin-bottom: 10px;
 }
 
-.section-head .section-title{
-  margin: 0;
+@media (max-width: 900px){
+  .twoCol{ grid-template-columns: 1fr; }
 }
 
-.section-link a{
+.btnPrimary{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding: 12px 14px;
+  border: 1px solid var(--fg);
+  border-radius: 12px;
+  background: transparent;
+  color: var(--fg);
+  min-width: 220px;
+}
+
+.btnPrimary:hover{
+  color: var(--hover);
+  border-color: var(--hover);
+}
+
+.btnGhost{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: transparent;
+  color: var(--fg);
+  min-width: 220px;
+}
+
+.btnGhost:hover{
+  border-color: #3A3A40;
+  color: var(--hover);
+}
+
+.kv{
+  display:flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.kvRow{
+  display:flex;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.kvRow:last-child{ border-bottom: none; }
+
+.kvKey{
   color: var(--muted);
   font-size: 13px;
 }
-.section-link a:hover{ color: var(--hover); }
 
-/* smooth in-page scrolling */
-html{ scroll-behavior: smooth; }
+.kvVal{
+  color: var(--fg);
+  font-size: 13px;
+  text-align: right;
+}
 
-/* keep anchors from hiding under the nav */
-.anchor{
-  scroll-margin-top: 90px;
+.note{
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 10px;
 }

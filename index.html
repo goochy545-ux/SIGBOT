@@ -9,6 +9,8 @@
 </head>
 <body>
   <div class="container">
+
+    <!-- NAV -->
     <div class="nav">
       <div class="brand">
         <a href="index.html">
@@ -17,177 +19,87 @@
         </a>
       </div>
 
-      <!-- Home is now a single page: jump to sections -->
       <div class="navlinks">
-        <a class="active" href="#top">Home</a>
-        <a href="#download">Download</a>
-        <a href="#what">What</a>
-        <a href="#who">Who</a>
-        <a href="#security">Security</a>
-        <a href="#contact">Contact</a>
+        <a class="active" href="index.html">Home</a>
+        <a href="download.html">Download</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
       </div>
     </div>
 
-    <div class="header anchor" id="top">
+    <!-- HERO -->
+    <div class="header" id="top">
       <div class="kicker">SIGBOT</div>
-      <h1 class="h1">Email signature capture → structured contacts.</h1>
+      <h1 class="h1">Email signatures → structured contacts.</h1>
       <p class="sub">Minimal, fast, and built for busy construction teams.</p>
     </div>
 
-    <hr class="hr" />
+    <!-- COLUMNS -->
+    <div class="columns">
 
-    <!-- DOWNLOAD -->
-    <section class="section anchor" id="download">
-      <div class="section-head">
-        <p class="section-title">Download</p>
-        <div class="section-link"><a href="#top">Back to top</a></div>
-      </div>
-
-      <div class="btnrow">
-        <a class="btn" href="download.html">Download for Mac (DMG)</a>
-        <a class="btn" href="download.html">Download for Windows (EXE)</a>
-      </div>
-      <p class="small">Latest stable release. Install in under a minute.</p>
-
-      <div class="list">
-        <div class="row">
-          <div class="left">
-            <div class="label"><a href="download.html#releases">Release notes</a></div>
-            <div class="hint">What changed</div>
-          </div>
-          <div class="badge">→</div>
+      <section class="column">
+        <div class="columnTitle">Download</div>
+        <div class="columnList">
+          <div class="columnItem"><a href="download.html">Mac (DMG)</a></div>
+          <div class="columnItem"><a href="download.html">Windows (EXE)</a></div>
+          <div class="columnItem"><a href="download.html#releases">Release notes</a></div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <hr class="hr" />
-
-    <!-- WHAT -->
-    <section class="section anchor" id="what">
-      <div class="section-head">
-        <p class="section-title">What it does</p>
-        <div class="section-link"><a href="#top">Back to top</a></div>
-      </div>
-
-      <div class="list">
-        <div class="row">
-          <div class="left">
-            <div class="label">Parse signatures</div>
-            <div class="hint">Name, company, title, phone, email</div>
-          </div>
-          <div class="badge">01</div>
+      <section class="column">
+        <div class="columnTitle">What it does</div>
+        <div class="columnList">
+          <div class="columnItem">Parse signatures</div>
+          <div class="columnItem">Extract name / role / company</div>
+          <div class="columnItem">Deduplicate contacts</div>
+          <div class="columnItem">Export CSV</div>
+          <div class="columnItem">Local-first</div>
         </div>
-        <div class="row">
-          <div class="left">
-            <div class="label">Deduplicate</div>
-            <div class="hint">Keep one clean record per contact</div>
-          </div>
-          <div class="badge">02</div>
+      </section>
+
+      <section class="column">
+        <div class="columnTitle">Who it’s for</div>
+        <div class="columnList">
+          <div class="columnItem">Project managers</div>
+          <div class="columnItem">Estimators</div>
+          <div class="columnItem">Contract admins</div>
+          <div class="columnItem">Procurement</div>
+          <div class="columnItem">Office coordinators</div>
         </div>
-        <div class="row">
-          <div class="left">
-            <div class="label">Export</div>
-            <div class="hint">CSV export for your tools</div>
-          </div>
-          <div class="badge">03</div>
+      </section>
+
+      <section class="column">
+        <div class="columnTitle">Security</div>
+        <div class="columnList">
+          <div class="columnItem">Local database</div>
+          <div class="columnItem">No forced cloud sync</div>
+          <div class="columnItem">User-controlled exports</div>
+          <div class="columnItem">Clear ownership</div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <hr class="hr" />
-
-    <!-- WHO -->
-    <section class="section anchor" id="who">
-      <div class="section-head">
-        <p class="section-title">Who it’s for</p>
-        <div class="section-link"><a href="#top">Back to top</a></div>
-      </div>
-
-      <div class="list">
-        <div class="row">
-          <div class="left">
-            <div class="label">Project managers</div>
-            <div class="hint">Keep vendor contacts organized</div>
+      <section class="column">
+        <div class="columnTitle">Contact</div>
+        <div class="columnList">
+          <div class="columnItem">
+            <a href="mailto:support@sigbot.com">support@sigbot.com</a>
           </div>
-          <div class="badge">→</div>
+          <div class="columnItem">Team rollouts</div>
+          <div class="columnItem">Enterprise pricing</div>
         </div>
-        <div class="row">
-          <div class="left">
-            <div class="label">Estimators</div>
-            <div class="hint">Build bid lists from real emails</div>
-          </div>
-          <div class="badge">→</div>
-        </div>
-        <div class="row">
-          <div class="left">
-            <div class="label">Contract admins</div>
-            <div class="hint">Less manual data entry</div>
-          </div>
-          <div class="badge">→</div>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <hr class="hr" />
+    </div>
 
-    <!-- SECURITY -->
-    <section class="section anchor" id="security">
-      <div class="section-head">
-        <p class="section-title">Security</p>
-        <div class="section-link"><a href="#top">Back to top</a></div>
-      </div>
-
-      <div class="list">
-        <div class="row">
-          <div class="left">
-            <div class="label">Local-first</div>
-            <div class="hint">Database stored on your machine by default (edit if not true)</div>
-          </div>
-          <div class="badge">•</div>
-        </div>
-        <div class="row">
-          <div class="left">
-            <div class="label">Clear exports</div>
-            <div class="hint">You control what leaves your machine</div>
-          </div>
-          <div class="badge">•</div>
-        </div>
-      </div>
-    </section>
-
-    <hr class="hr" />
-
-    <!-- CONTACT -->
-    <section class="section anchor" id="contact">
-      <div class="section-head">
-        <p class="section-title">Contact</p>
-        <div class="section-link"><a href="#top">Back to top</a></div>
-      </div>
-
-      <div class="list">
-        <div class="row">
-          <div class="left">
-            <div class="label">Support</div>
-            <div class="hint"><a href="mailto:support@sigbot.com">support@sigbot.com</a> (change this)</div>
-          </div>
-          <div class="badge">→</div>
-        </div>
-        <div class="row">
-          <div class="left">
-            <div class="label">Team rollout</div>
-            <div class="hint">Send company + mailbox count</div>
-          </div>
-          <div class="badge">→</div>
-        </div>
-      </div>
-    </section>
-
+    <!-- FOOTER -->
     <div class="footer">
       <div>© <span id="y"></span> SIGBOT</div>
       <div class="small">
         <a href="download.html">Download</a> · <a href="pricing.html">Pricing</a>
       </div>
     </div>
+
   </div>
 
   <script>
