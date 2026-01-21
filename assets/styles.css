@@ -79,29 +79,93 @@ a:hover{ color: var(--hover); }
   color: var(--hover);
 }
 
-/* HERO */
-.header{
-  padding: 28px 0 18px;
+/* Make Download subtly stand out */
+.navlinks a.cta{
+  color: var(--fg);
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 2px;
 }
 
-.kicker{
-  color: var(--muted);
-  font-size: 12px;
-  letter-spacing: 1.6px;
-  text-transform: uppercase;
-  margin-bottom: 10px;
+/* HERO – centered, clean */
+.hero{
+  position: relative;
+  padding: 56px 0 36px;
 }
 
-.h1{
-  font-size: 20px;
-  font-weight: 650;
-  margin: 0 0 6px;
+.hero:before{
+  content:"";
+  position:absolute;
+  inset: -24px -24px auto -24px;
+  height: 260px;
+  background: radial-gradient(
+    closest-side at 50% 40%,
+    rgba(237,237,237,0.12),
+    rgba(11,11,12,0) 72%
+  );
+  pointer-events:none;
 }
 
-.sub{
-  color: var(--muted);
-  margin: 0;
+.heroInner{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
+
+/* badge */
+.heroBadge{
+  margin-bottom: 18px;
+}
+
+/* headline */
+.heroTitle{
+  max-width: 26ch;
+  margin: 0 0 14px;
+  font-size: 38px;
+  font-weight: 700;
+  letter-spacing: -0.6px;
+  line-height: 1.12;
+}
+
+/* sub text */
+.heroSub{
+  max-width: 62ch;
+  font-size: 18px;
+  line-height: 1.5;
+  margin: 0 0 22px;
+}
+
+/* CTAs */
+.heroCtas{
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+/* chips */
+.heroChips{
+  justify-content: center;
+}
+
+/* MOBILE */
+@media (max-width: 760px){
+  .hero{
+    padding: 42px 0 28px;
+  }
+
+  .heroTitle{
+    font-size: 28px;
+    max-width: 22ch;
+  }
+
+  .heroSub{
+    font-size: 16px;
+  }
+}
+
+
 
 /* COLUMNS */
 .columns{
@@ -121,23 +185,55 @@ a:hover{ color: var(--hover); }
   padding-left: 0;
 }
 
+/* ICONS — inline SVGs matching robot */
+.columnIcon{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+  color: var(--muted);
+}
+
+.columnIcon svg{
+  width: 72px;              /* 4x bigger */
+  height: 72px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0.85;
+  transition: opacity 0.15s ease;
+}
+
+/* subtle brighten on hover (icons) */
+.column:hover .columnIcon{
+  color: var(--fg);
+}
+
+.column:hover .columnIcon svg{
+  opacity: 1;
+}
+
 .columnTitle{
   font-size: 12px;
   letter-spacing: 1.4px;
   text-transform: uppercase;
   color: var(--muted);
   margin-bottom: 12px;
+  text-align: center;        /* center title under icon */
 }
 
 .columnList{
   display: flex;
   flex-direction: column;
   gap: 10px;
+  align-items: center;       /* center list under title */
 }
 
 .columnItem{
   font-size: 14px;
   color: var(--fg);
+  text-align: center;
 }
 
 .columnItem a{
@@ -148,6 +244,11 @@ a:hover{ color: var(--hover); }
   color: var(--hover);
 }
 
+.columnHint{
+  color: var(--muted);
+  font-size: 13px;
+}
+
 /* FOOTER */
 .small{
   color: var(--muted);
@@ -155,7 +256,7 @@ a:hover{ color: var(--hover); }
 }
 
 .footer{
-  margin-top: 40px;
+  margin-top: 24px;
   padding-top: 16px;
   border-top: 1px solid var(--line);
   display:flex;
@@ -188,6 +289,7 @@ a:hover{ color: var(--hover); }
     padding-top: 0;
   }
 }
+
 /* clean page sections */
 .page{
   padding: 22px 0 0;
@@ -293,4 +395,8 @@ a:hover{ color: var(--hover); }
   color: var(--muted);
   font-size: 13px;
   margin-top: 10px;
+}
+
+.trustNote{
+  margin-top: 22px;
 }

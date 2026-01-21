@@ -3,10 +3,39 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SIGBOT</title>
-  <meta name="description" content="Turn email signatures into structured contacts." />
+
+  <title>Sigbot | Outlook Email Signature to Contact Database</title>
+  <meta name="description" content="Sigbot extracts contact details from Outlook email signatures and builds a clean, local contact database for project teams that live in email." />
+
+  <link rel="canonical" href="https://sigbot.ca/" />
+  <meta name="robots" content="index,follow" />
+
   <link rel="stylesheet" href="assets/styles.css" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Sigbot | Outlook Email Signature to Contact Database" />
+  <meta property="og:description" content="Turn Outlook email signatures into a clean, local contact database. Built for teams that live in email." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sigbot.ca/" />
+  <meta property="og:image" content="https://sigbot.ca/assets/icons/robot.svg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary" />
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Sigbot",
+    "applicationCategory": "ProductivityApplication",
+    "operatingSystem": "Windows, macOS",
+    "url": "https://sigbot.ca/",
+    "description": "Extracts contact details from Outlook email signatures and creates a local contact database."
+  }
+  </script>
 </head>
+
 <body>
   <div class="container">
 
@@ -21,45 +50,86 @@
 
       <div class="navlinks">
         <a class="active" href="index.html">Home</a>
-        <a href="download.html">Download</a>
+        <a class="cta" href="download.html">Download</a>
         <a href="pricing.html">Pricing</a>
         <a href="faq.html">FAQ</a>
         <a href="contact.html">Contact</a>
       </div>
     </div>
 
-    <!-- HERO -->
-    <div class="header" id="top">
-      <div class="kicker">SIGBOT</div>
-      <h1 class="h1">Email signatures → structured contacts.</h1>
-      <p class="sub">Minimal, fast, and built for busy construction teams.</p>
-    </div>
+<!-- HERO -->
+<div class="header hero" id="top">
+    <div class="heroInner"></div>
+
+  <div class="heroBadge">
+    <span class="dot"></span>
+    Local-first · No cloud sync · Export CSV
+  </div>
+
+  <h1 class="h1 heroTitle">
+    Turn Outlook email signatures into a clean contact database.
+  </h1>
+
+  <p class="sub heroSub">
+    Automatically extract names, roles, companies, and phone numbers from real project emails — without a CRM.
+  </p>
+
+  <div class="heroCtas">
+    <a href="download.html" class="btnPrimary">Download</a>
+    <a href="faq.html" class="heroLink">How it works</a>
+  </div>
+
+  <div class="heroChips" aria-label="Key benefits">
+    <span class="chip">Deduplicate contacts</span>
+    <span class="chip">User-controlled exports</span>
+    <span class="chip">Runs on your machine</span>
+  </div>
+</div>
+
 
     <!-- COLUMNS -->
     <div class="columns">
 
+      <!-- What it does -->
       <section class="column">
-        <div class="columnTitle">Download</div>
-        <div class="columnList">
-          <div class="columnItem"><a href="download.html">Mac (DMG)</a></div>
-          <div class="columnItem"><a href="download.html">Windows (EXE)</a></div>
-          <div class="columnItem"><a href="download.html#releases">Release notes</a></div>
+        <div class="columnIcon">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M12 3v2"/>
+            <path d="M10.2 5h3.6"/>
+            <path d="M8 7.5h6l2 2v7.8c0 1.1-.9 2-2 2H8c-1.1 0-2-.9-2-2V9.5c0-1.1.9-2 2-2z"/>
+            <path d="M14 7.5v2h2"/>
+            <path d="M8.6 12h4.9"/>
+            <path d="M8.6 14.6h6.8"/>
+            <path d="M8.6 17.2h5.6"/>
+          </svg>
         </div>
-      </section>
 
-      <section class="column">
         <div class="columnTitle">What it does</div>
+
         <div class="columnList">
+          <div class="columnItem columnHint">Pull contacts directly from real project email threads.</div>
           <div class="columnItem">Parse signatures</div>
           <div class="columnItem">Extract name / role / company</div>
+          <div class="columnItem">Extract phone numbers</div>
           <div class="columnItem">Deduplicate contacts</div>
           <div class="columnItem">Export CSV</div>
           <div class="columnItem">Local-first</div>
         </div>
       </section>
 
+      <!-- Who it’s for -->
       <section class="column">
+        <div class="columnIcon">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M12 3v2"/>
+            <path d="M10.2 5h3.6"/>
+            <path d="M12 13.2c2 0 3.6-1.6 3.6-3.6S14 6 12 6 8.4 7.6 8.4 9.6 10 13.2 12 13.2z"/>
+            <path d="M6.8 20c.8-2.8 2.9-4.4 5.2-4.4s4.4 1.6 5.2 4.4"/>
+          </svg>
+        </div>
+
         <div class="columnTitle">Who it’s for</div>
+
         <div class="columnList">
           <div class="columnItem">Project managers</div>
           <div class="columnItem">Estimators</div>
@@ -69,8 +139,20 @@
         </div>
       </section>
 
+      <!-- Security -->
       <section class="column">
+        <div class="columnIcon">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M12 3v2"/>
+            <path d="M10.2 5h3.6"/>
+            <path d="M12 7l6 2.3v5.1c0 4.1-3 7.2-6 8.6-3-1.4-6-4.5-6-8.6V9.3L12 7z"/>
+            <path d="M10.2 14.2h3.6"/>
+            <path d="M11 14.2v-1.1c0-.6.4-1.1 1-1.1s1 .5 1 1.1v1.1"/>
+          </svg>
+        </div>
+
         <div class="columnTitle">Security</div>
+
         <div class="columnList">
           <div class="columnItem">Local database</div>
           <div class="columnItem">No forced cloud sync</div>
@@ -79,18 +161,54 @@
         </div>
       </section>
 
+      <!-- Download -->
       <section class="column">
+        <div class="columnIcon">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M12 3v2"/>
+            <path d="M10.2 5h3.6"/>
+            <path d="M6.8 15.6v2.2c0 1.1.9 2 2 2h6.4c1.1 0 2-.9 2-2v-2.2"/>
+            <path d="M12 7.2v8"/>
+            <path d="M9.5 12.8 12 15.2l2.5-2.4"/>
+          </svg>
+        </div>
+
+        <div class="columnTitle">Download</div>
+
+        <div class="columnList">
+          <div class="columnItem"><a href="download.html">Mac (DMG)</a></div>
+          <div class="columnItem"><a href="download.html">Windows (EXE)</a></div>
+          <div class="columnItem"><a href="download.html#releases">Release notes</a></div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section class="column">
+        <div class="columnIcon">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M12 3v2"/>
+            <path d="M10.2 5h3.6"/>
+            <path d="M6.5 9.5h11c1.1 0 2 .9 2 2v6c0 1.1-.9 2-2 2h-11c-1.1 0-2-.9-2-2v-6c0-1.1.9-2 2-2z"/>
+            <path d="M7.2 11.2 12 14.6l4.8-3.4"/>
+          </svg>
+        </div>
+
         <div class="columnTitle">Contact</div>
+
         <div class="columnList">
           <div class="columnItem">
             <a href="mailto:support@sigbot.com">support@sigbot.com</a>
           </div>
-          <div class="columnItem">Team rollouts</div>
-          <div class="columnItem">Enterprise pricing</div>
+          <div class="columnItem">Questions or feedback</div>
         </div>
       </section>
 
     </div>
+
+    <!-- TRUST LINE -->
+    <p class="note trustNote">
+      Sigbot runs entirely on your machine. No tracking, no analytics, no forced accounts.
+    </p>
 
     <!-- FOOTER -->
     <div class="footer">
