@@ -1,20 +1,30 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Sigbot | Outlook Email Signature to Contact Database</title>
-  <meta name="description" content="Sigbot extracts contact details from Outlook email signatures and builds a clean, local contact database for project teams that live in email." />
+  <meta name="description"
+    content="Sigbot extracts contact details from Outlook email signatures and builds a clean, local contact database for project teams that live in email." />
 
   <link rel="canonical" href="https://sigbot.ca/" />
   <meta name="robots" content="index,follow" />
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+
 
   <link rel="stylesheet" href="assets/styles.css" />
 
   <!-- Open Graph -->
   <meta property="og:title" content="Sigbot | Outlook Email Signature to Contact Database" />
-  <meta property="og:description" content="Turn Outlook email signatures into a clean, local contact database. Built for teams that live in email." />
+  <meta property="og:description"
+    content="Turn Outlook email signatures into a clean, local contact database. Built for teams that live in email." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://sigbot.ca/" />
   <meta property="og:image" content="https://sigbot.ca/assets/icons/robot.svg" />
@@ -50,178 +60,372 @@
 
       <div class="navlinks">
         <a class="active" href="index.html">Home</a>
-        <a class="cta" href="download.html">Download</a>
         <a href="pricing.html">Pricing</a>
         <a href="faq.html">FAQ</a>
-        <a href="contact.html">Contact</a>
+        <a class="cta" href="download.html">Download</a>
       </div>
     </div>
 
-<!-- HERO -->
-<div class="header hero" id="top">
-    <div class="heroInner"></div>
+    <!-- HERO -->
+    <div class="header hero" id="top">
 
-  <div class="heroBadge">
-    <span class="dot"></span>
-    Local-first · No cloud sync · Export CSV
+
+      <h1 class="h1 heroTitle">
+        Turn email signatures into a<br>clean contact database.
+      </h1>
+
+      <p class="sub heroSub">
+        Automatically extract names, roles, companies, and phone numbers from real project emails — without a CRM.
+      </p>
+
+      <div class="heroCtas">
+        <a href="download.html" class="btnPrimary">Get Started</a>
+        <a href="faq.html" class="heroLink">How it works →</a>
+      </div>
+
+      <div class="heroChips" aria-label="Key benefits">
+        <span class="chip">Deduplicate contacts</span>
+        <span class="chip">User-controlled exports</span>
+        <span class="chip">Runs on your machine</span>
+      </div>
+
+      <!-- App Mockup -->
+      <div class="appMockup">
+        <!-- Cursor -->
+        <div class="cursor"></div>
+
+        <div class="appWindow">
+          <div class="windowHeader">
+            <div class="winControls">
+              <div class="winDot red"></div>
+              <div class="winDot yellow"></div>
+              <div class="winDot green"></div>
+            </div>
+            <div class="winTitle">Dashboard</div>
+            <div style="width: 40px"></div> <!-- spacer -->
+          </div>
+
+          <div class="windowBody">
+            <!-- Sidebar -->
+            <div class="mockSidebar">
+              <div class="mockBrand">SIGBOT</div>
+              <div class="mockNavLink active">
+                <div class="mockIcon"></div> Dashboard
+              </div>
+              <div class="mockNavLink">
+                <div class="mockIcon"></div> Contacts
+              </div>
+              <div class="mockNavLink">
+                <div class="mockIcon"></div> Map
+              </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="mockMain">
+              <div class="mockHeader">
+                <div class="mockPageTitle">Dashboard</div>
+                <button class="mockBtn">+ ADD CONTACT</button>
+              </div>
+
+              <!-- Top Row -->
+              <div class="dashboardGrid">
+                <!-- Row 1: Stat Cards -->
+                <div class="stat-card span-2">
+                  <div class="stat-label">Total Contacts</div>
+                  <div class="stat-value">2,543</div>
+                  <div class="stat-trend positive">↑ 12% this week</div>
+                  <div class="stat-icon-bg">👥</div>
+                </div>
+
+                <div class="stat-card span-2">
+                  <div class="stat-label">Top Company</div>
+                  <div class="stat-value">Google</div>
+                  <div class="stat-trend">Most frequent</div>
+                  <div class="stat-icon-bg">🏢</div>
+                </div>
+
+                <div class="stat-card span-2">
+                  <div class="stat-label">Top Role</div>
+                  <div class="stat-value">Manager</div>
+                  <div class="stat-trend">Most frequent</div>
+                  <div class="stat-icon-bg">💼</div>
+                </div>
+
+                <!-- Row 2: Recently Added -->
+                <div class="widget span-6" style="min-height: 250px;">
+                  <h3>Recently Added</h3>
+                  <div style="display: flex; flex-direction: column; gap: 12px;">
+                    <!-- Mock List Items -->
+                    <div
+                      style="display: flex; justify-content: space-between; padding: 12px; background: rgba(255,255,255,0.03); border-radius: 6px; align-items: center;">
+                      <div style="font-weight: 500; font-size: 14px;">David Miller <span
+                          style="color: #666; margin-left: 8px; font-size: 12px;">Acme Corp</span></div>
+                      <div
+                        style="font-size: 11px; padding: 4px 8px; background: rgba(16, 185, 129, 0.2); color: #10b981; border-radius: 4px;">
+                        VERIFIED</div>
+                    </div>
+                    <div
+                      style="display: flex; justify-content: space-between; padding: 12px; background: rgba(255,255,255,0.03); border-radius: 6px; align-items: center;">
+                      <div style="font-weight: 500; font-size: 14px;">Sarah Jenkins <span
+                          style="color: #666; margin-left: 8px; font-size: 12px;">Google</span></div>
+                      <div
+                        style="font-size: 11px; padding: 4px 8px; background: rgba(16, 185, 129, 0.2); color: #10b981; border-radius: 4px;">
+                        VERIFIED</div>
+                    </div>
+                    <div
+                      style="display: flex; justify-content: space-between; padding: 12px; background: rgba(255,255,255,0.03); border-radius: 6px; align-items: center;">
+                      <div style="font-weight: 500; font-size: 14px;">Mike Ross <span
+                          style="color: #666; margin-left: 8px; font-size: 12px;">Pearson Hardman</span></div>
+                      <div
+                        style="font-size: 11px; padding: 4px 8px; background: rgba(16, 185, 129, 0.2); color: #10b981; border-radius: 4px;">
+                        VERIFIED</div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Row 3: Growth Chart -->
+                <div class="widget span-6" style="min-height: 300px;">
+                  <h3>Growth Timeline</h3>
+                  <div class="graphPlaceholder">
+                    <div class="bar" style="height: 30%;"></div>
+                    <div class="bar" style="height: 45%;"></div>
+                    <div class="bar" style="height: 40%;"></div>
+                    <div class="bar" style="height: 60%;"></div>
+                    <div class="bar" style="height: 55%;"></div>
+                    <div class="bar" style="height: 75%;"></div>
+                    <div class="bar" style="height: 90%;"></div>
+                  </div>
+                </div>
+
+                <!-- Row 4: Map -->
+                <div class="widget span-6" style="min-height: 400px; padding: 0;">
+                  <div class="mapPlaceholder">
+                    <div class="mapPin"></div>
+                    <!-- Clean view, no popup -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
   </div>
 
-  <h1 class="h1 heroTitle">
-    Turn Outlook email signatures into a clean contact database.
-  </h1>
+  <!-- FEATURES GRID -->
+  <!-- FEATURES STACK -->
+  <div class="features-stack">
 
-  <p class="sub heroSub">
-    Automatically extract names, roles, companies, and phone numbers from real project emails — without a CRM.
+    <!-- Feature 1 -->
+    <section class="feature-card">
+      <div class="f-content">
+        <div class="feature-icon-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 3v2" />
+            <path d="M10.2 5h3.6" />
+            <path d="M8 7.5h6l2 2v7.8c0 1.1-.9 2-2 2H8c-1.1 0-2-.9-2-2V9.5c0-1.1.9-2 2-2z" />
+            <path d="M14 7.5v2h2" />
+            <path d="M8.6 12h4.9" />
+            <path d="M8.6 14.6h6.8" />
+            <path d="M8.6 17.2h5.6" />
+          </svg>
+        </div>
+        <h2 class="f-title">Automated Extraction</h2>
+        <p class="f-desc">Stop copy-pasting. Sigbot parses complex email signatures to pull clean data directly from
+          your real Outlook threads.</p>
+        <ul class="f-list">
+          <li>Extracts name, role, company, and phone</li>
+          <li>Deduplicates repetitive contacts</li>
+          <li>Handles messy formatting intelligently</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Feature 2 -->
+    <section class="feature-card">
+      <div class="f-content">
+        <div class="feature-icon-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 3v2" />
+            <path d="M10.2 5h3.6" />
+            <path d="M12 7l6 2.3v5.1c0 4.1-3 7.2-6 8.6-3-1.4-6-4.5-6-8.6V9.3L12 7z" />
+            <path d="M10.2 14.2h3.6" />
+            <path d="M11 14.2v-1.1c0-.6.4-1.1 1-1.1s1 .5 1 1.1v1.1" />
+          </svg>
+        </div>
+        <h2 class="f-title">Private & Secure</h2>
+        <p class="f-desc">Your contact data is valuable. We keep it that way by processing everything locally on your
+          machine.</p>
+        <ul class="f-list">
+          <li>Local database only (SQLite)</li>
+          <li>No forced cloud sync</li>
+          <li>You own your data completely</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Feature 3 -->
+    <section class="feature-card">
+      <div class="f-content">
+        <div class="feature-icon-box">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 3v2" />
+            <path d="M10.2 5h3.6" />
+            <path d="M12 13.2c2 0 3.6-1.6 3.6-3.6S14 6 12 6 8.4 7.6 8.4 9.6 10 13.2 12 13.2z" />
+            <path d="M6.8 20c.8-2.8 2.9-4.4 5.2-4.4s4.4 1.6 5.2 4.4" />
+          </svg>
+        </div>
+        <h2 class="f-title">Built For Teams</h2>
+        <p class="f-desc">Designed for roles that live in email. Perfect for building project contact lists without
+          manual entry.</p>
+        <ul class="f-list">
+          <li>Project Managers</li>
+          <li>Estimators & Admins</li>
+          <li>Contract Administrators</li>
+        </ul>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- PLATFORMS SECTION -->
+  <div style="margin-top: 80px;">
+    <h2 class="heroTitle"
+      style="font-size: 32px; margin-bottom: 40px; text-align: center; animation: none; opacity: 1;">Access anywhere.
+    </h2>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
+
+      <!-- DESKTOP -->
+      <div class="feature-card" style="padding: 32px; display: flex; flex-direction: column; height: 100%;">
+        <div class="feature-icon-box" style="width: 48px; height: 48px; margin: 0 0 20px 0;">
+          <!-- Monitor Icon -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+            <line x1="8" y1="21" x2="16" y2="21"></line>
+            <line x1="12" y1="17" x2="12" y2="21"></line>
+          </svg>
+        </div>
+        <h3 class="f-title" style="font-size: 20px;">Sigbot for Desktop</h3>
+        <p class="f-desc" style="font-size: 15px; margin-bottom: 20px;">Power user tools for heavy email workflows.
+          Manage, edit, and export your contacts with ease.</p>
+        <ul class="f-list" style="margin-top: auto;">
+          <li>Automated extraction</li>
+          <li>Dashboard analytics</li>
+          <li>Advanced contact management</li>
+        </ul>
+      </div>
+
+      <!-- MOBILE -->
+      <div class="feature-card" style="padding: 32px; display: flex; flex-direction: column; height: 100%;">
+        <div class="feature-icon-box" style="width: 48px; height: 48px; margin: 0 0 20px 0;">
+          <!-- Mobile Icon -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+            <line x1="12" y1="18" x2="12.01" y2="18"></line>
+          </svg>
+        </div>
+        <h3 class="f-title" style="font-size: 20px;">Sigbot Mobile</h3>
+        <p class="f-desc" style="font-size: 15px; margin-bottom: 20px;">Your project rolodex in your pocket. Search and
+          view your database on the go.</p>
+        <ul class="f-list" style="margin-top: auto;">
+          <li>Quick search</li>
+          <li>Click-to-call</li>
+          <li>Offline access</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- DEDICATED FOOTER CTA SECTION -->
+  <div class="footer-cta-section">
+    <!-- Download Column -->
+    <div class="cta-col">
+      <h3 class="cta-title">Get Started</h3>
+      <div class="cta-links">
+        <a href="download.html" class="cta-link">
+          <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none" stroke-width="2">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+            <polyline points="7 10 12 15 17 10" />
+            <line x1="12" y1="15" x2="12" y2="3" />
+          </svg>
+          Download for Mac (DMG)
+        </a>
+        <a href="download.html" class="cta-link">
+          <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none" stroke-width="2">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+            <line x1="2" y1="10" x2="22" y2="10" />
+            <line x1="2" y1="14" x2="22" y2="14" />
+            <line x1="6" y1="14" x2="6" y2="14" />
+            <path d="m22 2-7 20" />
+          </svg>
+          Download for Windows (EXE)
+        </a>
+        <a href="download.html#releases" class="cta-sublink">View Release Notes</a>
+      </div>
+    </div>
+
+    <!-- Support Column -->
+    <div class="cta-col">
+      <h3 class="cta-title">Support</h3>
+      <div class="cta-links">
+        <a href="mailto:support@sigbot.com" class="cta-link">
+          <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" fill="none" stroke-width="2">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+            <polyline points="22,6 12,13 2,6" />
+          </svg>
+          support@sigbot.com
+        </a>
+        <span class="cta-text">Questions, feedback, or feature requests? We'd love to hear from you.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- TRUST LINE -->
+  <p class="trustNote">
+    Sigbot runs entirely on your machine. No tracking, no analytics, no forced accounts.
   </p>
 
-  <div class="heroCtas">
-    <a href="download.html" class="btnPrimary">Download</a>
-    <a href="faq.html" class="heroLink">How it works</a>
-  </div>
-
-  <div class="heroChips" aria-label="Key benefits">
-    <span class="chip">Deduplicate contacts</span>
-    <span class="chip">User-controlled exports</span>
-    <span class="chip">Runs on your machine</span>
-  </div>
-</div>
-
-
-    <!-- COLUMNS -->
-    <div class="columns">
-
-      <!-- What it does -->
-      <section class="column">
-        <div class="columnIcon">
-          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-            <path d="M12 3v2"/>
-            <path d="M10.2 5h3.6"/>
-            <path d="M8 7.5h6l2 2v7.8c0 1.1-.9 2-2 2H8c-1.1 0-2-.9-2-2V9.5c0-1.1.9-2 2-2z"/>
-            <path d="M14 7.5v2h2"/>
-            <path d="M8.6 12h4.9"/>
-            <path d="M8.6 14.6h6.8"/>
-            <path d="M8.6 17.2h5.6"/>
-          </svg>
-        </div>
-
-        <div class="columnTitle">What it does</div>
-
-        <div class="columnList">
-          <div class="columnItem columnHint">Pull contacts directly from real project email threads.</div>
-          <div class="columnItem">Parse signatures</div>
-          <div class="columnItem">Extract name / role / company</div>
-          <div class="columnItem">Extract phone numbers</div>
-          <div class="columnItem">Deduplicate contacts</div>
-          <div class="columnItem">Export CSV</div>
-          <div class="columnItem">Local-first</div>
-        </div>
-      </section>
-
-      <!-- Who it’s for -->
-      <section class="column">
-        <div class="columnIcon">
-          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-            <path d="M12 3v2"/>
-            <path d="M10.2 5h3.6"/>
-            <path d="M12 13.2c2 0 3.6-1.6 3.6-3.6S14 6 12 6 8.4 7.6 8.4 9.6 10 13.2 12 13.2z"/>
-            <path d="M6.8 20c.8-2.8 2.9-4.4 5.2-4.4s4.4 1.6 5.2 4.4"/>
-          </svg>
-        </div>
-
-        <div class="columnTitle">Who it’s for</div>
-
-        <div class="columnList">
-          <div class="columnItem">Project managers</div>
-          <div class="columnItem">Estimators</div>
-          <div class="columnItem">Contract admins</div>
-          <div class="columnItem">Procurement</div>
-          <div class="columnItem">Office coordinators</div>
-        </div>
-      </section>
-
-      <!-- Security -->
-      <section class="column">
-        <div class="columnIcon">
-          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-            <path d="M12 3v2"/>
-            <path d="M10.2 5h3.6"/>
-            <path d="M12 7l6 2.3v5.1c0 4.1-3 7.2-6 8.6-3-1.4-6-4.5-6-8.6V9.3L12 7z"/>
-            <path d="M10.2 14.2h3.6"/>
-            <path d="M11 14.2v-1.1c0-.6.4-1.1 1-1.1s1 .5 1 1.1v1.1"/>
-          </svg>
-        </div>
-
-        <div class="columnTitle">Security</div>
-
-        <div class="columnList">
-          <div class="columnItem">Local database</div>
-          <div class="columnItem">No forced cloud sync</div>
-          <div class="columnItem">User-controlled exports</div>
-          <div class="columnItem">Clear ownership</div>
-        </div>
-      </section>
-
-      <!-- Download -->
-      <section class="column">
-        <div class="columnIcon">
-          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-            <path d="M12 3v2"/>
-            <path d="M10.2 5h3.6"/>
-            <path d="M6.8 15.6v2.2c0 1.1.9 2 2 2h6.4c1.1 0 2-.9 2-2v-2.2"/>
-            <path d="M12 7.2v8"/>
-            <path d="M9.5 12.8 12 15.2l2.5-2.4"/>
-          </svg>
-        </div>
-
-        <div class="columnTitle">Download</div>
-
-        <div class="columnList">
-          <div class="columnItem"><a href="download.html">Mac (DMG)</a></div>
-          <div class="columnItem"><a href="download.html">Windows (EXE)</a></div>
-          <div class="columnItem"><a href="download.html#releases">Release notes</a></div>
-        </div>
-      </section>
-
-      <!-- Contact -->
-      <section class="column">
-        <div class="columnIcon">
-          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-            <path d="M12 3v2"/>
-            <path d="M10.2 5h3.6"/>
-            <path d="M6.5 9.5h11c1.1 0 2 .9 2 2v6c0 1.1-.9 2-2 2h-11c-1.1 0-2-.9-2-2v-6c0-1.1.9-2 2-2z"/>
-            <path d="M7.2 11.2 12 14.6l4.8-3.4"/>
-          </svg>
-        </div>
-
-        <div class="columnTitle">Contact</div>
-
-        <div class="columnList">
-          <div class="columnItem">
-            <a href="mailto:support@sigbot.com">support@sigbot.com</a>
-          </div>
-          <div class="columnItem">Questions or feedback</div>
-        </div>
-      </section>
-
+  <!-- FOOTER -->
+  <div class="footer">
+    <div>© <span id="y"></span> SIGBOT</div>
+    <div class="small">
+      <a href="download.html">Download</a> · <a href="pricing.html">Pricing</a>
     </div>
-
-    <!-- TRUST LINE -->
-    <p class="note trustNote">
-      Sigbot runs entirely on your machine. No tracking, no analytics, no forced accounts.
-    </p>
-
-    <!-- FOOTER -->
-    <div class="footer">
-      <div>© <span id="y"></span> SIGBOT</div>
-      <div class="small">
-        <a href="download.html">Download</a> · <a href="pricing.html">Pricing</a>
-      </div>
-    </div>
+  </div>
 
   </div>
 
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
+
+
+
+
+
+    // Simple fade in on scroll
+    // Simple fade in on scroll
+    const cards = document.querySelectorAll('.feature-card, .cta-col');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = 1;
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.1 });
+
+    cards.forEach((card, index) => {
+      card.style.opacity = 0;
+      card.style.transform = 'translateY(20px)';
+      card.style.transition = `all 0.6s ease ${index * 0.1}s`; // Stagger effect
+      observer.observe(card);
+    });
   </script>
 </body>
+
 </html>
