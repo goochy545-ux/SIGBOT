@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sigbot | Mobile App</title>
+    <meta name="description"
+        content="Sigbot Mobile: Access your contact database, search, map, and scan cards on the go." />
+    <link rel="stylesheet" href="assets/styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+
+        <!-- NAV -->
+        <div class="nav">
+            <div class="brand">
+                <a href="index.html">
+                    <img src="assets/robot.svg" alt="" aria-hidden="true">
+                    SIGBOT
+                </a>
+            </div>
+
+            <div class="navlinks">
+                <a href="index.html">Home</a>
+                <a class="active" href="mobile.html">Mobile App</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="faq.html">FAQ</a>
+                <a class="cta" href="download.html">Download</a>
+            </div>
+        </div>
+
+        <!-- HERO -->
+        <div class="header hero" style="padding-top: 60px; padding-bottom: 40px; min-height: auto;">
+            <h1 class="h1 heroTitle">
+                Your Database,<br>On the Go.
+            </h1>
+            <p class="sub heroSub">
+                Take your project network with you. Search contacts, view maps, and scan business cards from anywhere.
+            </p>
+        </div>
+
+        <!-- SCROLLYTELLING CONTAINER -->
+        <div class="mobile-showcase">
+
+            <!-- Sticky Phone -->
+            <div class="phone-sticky-container">
+                <div class="iphone-bezel">
+                    <div class="iphone-notch"></div>
+                    <div class="iphone-screen">
+                        <!-- Screen 1: Dashboard -->
+                        <div class="app-screen screen-dashboard active">
+                            <div class="app-header">
+                                <div>Dashboard</div>
+                            </div>
+                            <div class="app-stat-row">
+                                <div class="app-stat"><span>2.5K</span><small>Contacts</small></div>
+                                <div class="app-stat"><span>+12%</span><small>Growth</small></div>
+                            </div>
+                            <div class="app-section-title">Recent</div>
+                            <div class="app-list">
+                                <div class="app-list-item">
+                                    <div class="app-avatar-sm">JM</div>
+                                    <div>
+                                        <div class="app-name">James Miller</div>
+                                        <div class="app-meta">Architects Inc.</div>
+                                    </div>
+                                </div>
+                                <div class="app-list-item">
+                                    <div class="app-avatar-sm">SL</div>
+                                    <div>
+                                        <div class="app-name">Sarah Lee</div>
+                                        <div class="app-meta">Design Studio</div>
+                                    </div>
+                                </div>
+                                <div class="app-list-item">
+                                    <div class="app-avatar-sm">DK</div>
+                                    <div>
+                                        <div class="app-name">David Kim</div>
+                                        <div class="app-meta">BuildCo</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Screen 2: Contacts -->
+                        <div class="app-screen screen-contacts">
+                            <div class="app-header">
+                                <div>Contacts</div>
+                                <div class="app-icon-btn">🔍</div>
+                            </div>
+                            <div class="app-search-bar">Search contacts...</div>
+                            <div class="app-list">
+                                <div class="app-list-item">
+                                    <div class="app-avatar-sm">AB</div>
+                                    <div>
+                                        <div class="app-name">Alex Builder</div>
+                                        <div class="app-meta">Construction Co.</div>
+                                    </div>
+                                    <div class="app-action-btn">📞</div>
+                                </div>
+                                <!-- More items implied -->
+                                <div class="app-list-item">
+                                    <div class="app-avatar-sm" style="background:#ef4444">EM</div>
+                                    <div>
+                                        <div class="app-name">Emma Musician</div>
+                                        <div class="app-meta">Sound Systems</div>
+                                    </div>
+                                    <div class="app-action-btn">📞</div>
+                                </div>
+                                <div class="app-list-item">
+                                    <div class="app-avatar-sm" style="background:#f59e0b">GT</div>
+                                    <div>
+                                        <div class="app-name">Greg Tech</div>
+                                        <div class="app-meta">Innovate Ltd</div>
+                                    </div>
+                                    <div class="app-action-btn">📞</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Screen 3: Map -->
+                        <div class="app-screen screen-map">
+                            <div class="app-map-bg">
+                                <div class="app-map-pin" style="top: 30%; left: 40%;"></div>
+                                <div class="app-map-pin" style="top: 50%; left: 70%;"></div>
+                                <div class="app-map-pin" style="top: 60%; left: 20%;"></div>
+                                <div class="app-map-card">
+                                    <strong>Alex Builder</strong><br>
+                                    123 Main St, City
+                                </div>
+                            </div>
+                            <div class="app-header-overlay">Map View</div>
+                        </div>
+
+                        <!-- Screen 4: Scan -->
+                        <div class="app-screen screen-scan">
+                            <div class="app-camera-view">
+                                <div class="scan-frame"></div>
+                                <div class="scan-btn"></div>
+                            </div>
+                            <div class="app-header-overlay">Scan Card</div>
+                        </div>
+
+                        <!-- Bottom Nav (Global) -->
+                        <div class="app-bottom-nav">
+                            <div class="nav-item active">🏠</div>
+                            <div class="nav-item">👥</div>
+                            <div class="nav-item">🗺️</div>
+                            <div class="nav-item">📷</div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scroll Steps -->
+            <div class="scroll-steps">
+                <div class="step" data-screen="screen-dashboard">
+                    <h2>Dashboard Overview</h2>
+                    <p>Get a quick snapshot of your database growth and recently added contacts instantly.</p>
+                </div>
+
+                <div class="step" data-screen="screen-contacts">
+                    <h2>Powerful Search</h2>
+                    <p>Find anyone in seconds. Filter by company, role, or name and start a call with one tap.</p>
+                </div>
+
+                <div class="step" data-screen="screen-map">
+                    <h2>Map Visualization</h2>
+                    <p>See where your network is located. Perfect for planning site visits and meetings nearby.</p>
+                </div>
+
+                <div class="step" data-screen="screen-scan">
+                    <h2>Card Scanner</h2>
+                    <p>Met someone new? Snap a photo of their business card to accurately extract details directly into
+                        your database.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="footer">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="mobile.html">Mobile App</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <p>&copy; 2026 Sigbot. All rights reserved.</p>
+        </div>
+
+    </div>
+
+    <script>
+        // Simple Scrollytelling Logic
+        const steps = document.querySelectorAll('.step');
+        const screens = document.querySelectorAll('.app-screen');
+        const phone = document.querySelector('.iphone-bezel');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Remove active from all screens
+                    screens.forEach(s => s.classList.remove('active'));
+                    // Add active to target screen
+                    const target = entry.target.dataset.screen;
+                    const targetScreen = document.querySelector(`.${target}`);
+                    if (targetScreen) targetScreen.classList.add('active');
+                }
+            });
+        }, {
+            threshold: 0.6 // Trigger when 60% of step is visible
+        });
+
+        steps.forEach(step => observer.observe(step));
+    </script>
+</body>
+
+</html>

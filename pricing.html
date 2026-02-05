@@ -1,11 +1,13 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <title>Pricing | Sigbot</title>
-  <meta name="description" content="Sigbot pricing for extracting Outlook email signatures into a local contact database. Simple pricing for individuals and teams." />
+  <meta name="description"
+    content="Sigbot pricing for extracting Outlook email signatures into a local contact database. Simple pricing for individuals and teams." />
 
   <link rel="canonical" href="https://sigbot.ca/pricing.html" />
   <meta name="robots" content="index,follow" />
@@ -44,13 +46,14 @@
       <h1 class="pageTitle">Pricing</h1>
       <p class="pageSub">Straightforward. Start with the download. Upgrade when you roll out to a team.</p>
 
-      <div class="twoCol">
+      <div class="pricingGrid">
+        <!-- 1. FREE -->
         <div class="panel">
-          <p class="panelTitle">Individual</p>
+          <p class="panelTitle">Free</p>
           <div class="kv">
             <div class="kvRow">
-              <div class="kvKey">Best for</div>
-              <div class="kvVal">Trying Sigbot</div>
+              <div class="kvKey">Contacts</div>
+              <div class="kvVal">Up to 50</div>
             </div>
             <div class="kvRow">
               <div class="kvKey">Includes</div>
@@ -58,26 +61,72 @@
             </div>
             <div class="kvRow">
               <div class="kvKey">Price</div>
-              <div class="kvVal">$0 (beta)</div>
+              <div class="kvVal">Free</div>
             </div>
           </div>
 
           <div class="btnrow" style="margin-top:14px">
             <a class="btnPrimary" href="download.html">Download</a>
-            <a class="btnGhost" href="faq.html">FAQ</a>
           </div>
         </div>
 
+        <!-- 2. PREMIUM -->
+        <div class="panel" style="border-color: #3b82f6; box-shadow: 0 0 20px rgba(59,130,246,0.15);">
+          <p class="panelTitle" style="color: #3b82f6">Premium</p>
+          <div class="kv">
+            <div class="kvRow">
+              <div class="kvKey">Contacts</div>
+              <div class="kvVal">Unlimited</div>
+            </div>
+            <div class="kvRow">
+              <div class="kvKey">Includes</div>
+              <div class="kvVal">Excel Import</div>
+            </div>
+            <div class="kvRow">
+              <div class="kvKey">Price</div>
+              <div class="kvVal">$10 / mo</div>
+            </div>
+          </div>
+
+          <div class="btnrow" style="margin-top:14px">
+            <a class="btnPrimary" href="#">Upgrade</a>
+          </div>
+        </div>
+
+        <!-- 3. TEAM -->
         <div class="panel">
           <p class="panelTitle">Team</p>
           <div class="kv">
             <div class="kvRow">
-              <div class="kvKey">Best for</div>
-              <div class="kvVal">Company rollout</div>
+              <div class="kvKey">Capacity</div>
+              <div class="kvVal">10 Mailboxes</div>
             </div>
             <div class="kvRow">
               <div class="kvKey">Includes</div>
-              <div class="kvVal">Support + deployment help</div>
+              <div class="kvVal">Shared Database</div>
+            </div>
+            <div class="kvRow">
+              <div class="kvKey">Price</div>
+              <div class="kvVal">$50 / mo</div>
+            </div>
+          </div>
+
+          <div class="btnrow" style="margin-top:14px">
+            <a class="btnGhost" href="contact.html">Contact Sales</a>
+          </div>
+        </div>
+
+        <!-- 4. ENTERPRISE -->
+        <div class="panel">
+          <p class="panelTitle">Enterprise</p>
+          <div class="kv">
+            <div class="kvRow">
+              <div class="kvKey">Capacity</div>
+              <div class="kvVal">Unlimited</div>
+            </div>
+            <div class="kvRow">
+              <div class="kvKey">Includes</div>
+              <div class="kvVal">SSO + SLA Support</div>
             </div>
             <div class="kvRow">
               <div class="kvKey">Price</div>
@@ -86,11 +135,8 @@
           </div>
 
           <div class="btnrow" style="margin-top:14px">
-            <a class="btnPrimary" href="contact.html">Request pricing</a>
-            <a class="btnGhost" href="mailto:support@sigbot.com">Email</a>
+            <a class="btnGhost" href="contact.html">Enquire</a>
           </div>
-
-          <p class="note">If you email, include company name + approximate mailbox count.</p>
         </div>
       </div>
 
@@ -99,10 +145,7 @@
       <div class="panel">
         <p class="panelTitle">Notes</p>
         <div class="kv">
-          <div class="kvRow">
-            <div class="kvKey">Data</div>
-            <div class="kvVal">Local-first (if true for your app)</div>
-          </div>
+
           <div class="kvRow">
             <div class="kvKey">Billing</div>
             <div class="kvVal">Only for team deployments</div>
@@ -126,4 +169,5 @@
     document.getElementById("y").textContent = new Date().getFullYear();
   </script>
 </body>
+
 </html>
