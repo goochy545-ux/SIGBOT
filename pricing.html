@@ -35,6 +35,8 @@
       </div>
       <div class="navlinks">
         <a href="index.html">Home</a>
+        <a href="desktop.html">Desktop App</a>
+        <a href="mobile.html">Mobile App</a>
         <a href="download.html">Download</a>
         <a class="active" href="pricing.html">Pricing</a>
         <a href="faq.html">FAQ</a>
@@ -42,125 +44,158 @@
       </div>
     </div>
 
-    <div class="page">
+    <div class="page" style="text-align: center;">
       <h1 class="pageTitle">Pricing</h1>
-      <p class="pageSub">Straightforward. Start with the download. Upgrade when you roll out to a team.</p>
 
       <div class="pricingGrid">
         <!-- 1. FREE -->
-        <div class="panel">
+        <div class="panel pricing-card">
           <p class="panelTitle">Free</p>
-          <div class="kv">
-            <div class="kvRow">
-              <div class="kvKey">Contacts</div>
-              <div class="kvVal">Up to 50</div>
-            </div>
-            <div class="kvRow">
-              <div class="kvKey">Includes</div>
-              <div class="kvVal">Core parsing + export</div>
-            </div>
-            <div class="kvRow">
-              <div class="kvKey">Price</div>
-              <div class="kvVal">Free</div>
-            </div>
+          <div class="price-tag">
+            <span class="price-value">$0</span>
+            <span class="price-period">/ forever</span>
           </div>
-
-          <div class="btnrow" style="margin-top:14px">
-            <a class="btnPrimary" href="download.html">Download</a>
+          <ul class="feature-list">
+            <li class="feature-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              Up to 50 Contacts
+            </li>
+            <li class="feature-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              Core Signature Parsing
+            </li>
+            <li class="feature-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              CSV/Excel Export
+            </li>
+          </ul>
+          <div class="btnrow" style="margin-top:auto">
+            <a class="btnPrimary" href="download.html" style="width:100%">Download</a>
           </div>
         </div>
 
         <!-- 2. PREMIUM -->
-        <div class="panel" style="border-color: #3b82f6; box-shadow: 0 0 20px rgba(59,130,246,0.15);">
-          <p class="panelTitle" style="color: #3b82f6">Premium</p>
-          <div class="kv">
-            <div class="kvRow">
-              <div class="kvKey">Contacts</div>
-              <div class="kvVal">Unlimited</div>
-            </div>
-            <div class="kvRow">
-              <div class="kvKey">Includes</div>
-              <div class="kvVal">Excel Import</div>
-            </div>
-            <div class="kvRow">
-              <div class="kvKey">Price</div>
-              <div class="kvVal">$10 / mo</div>
-            </div>
+        <div class="panel pricing-card recommended">
+          <div class="recommended-badge">Most Popular</div>
+          <p class="panelTitle">Premium</p>
+          <div class="price-tag">
+            <span class="price-value">$10</span>
+            <span class="price-period">/ month</span>
           </div>
-
-          <div class="btnrow" style="margin-top:14px">
-            <a class="btnPrimary" href="#">Upgrade</a>
+          <ul class="feature-list">
+            <li class="feature-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              Unlimited Contacts
+            </li>
+            <li class="feature-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              Excel/CSV Bulk Import
+            </li>
+            <li class="feature-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              Advanced Field Mapping
+            </li>
+          </ul>
+          <div class="btnrow" style="margin-top:auto">
+            <a class="btnPrimary" href="#" style="width:100%">Upgrade now</a>
           </div>
         </div>
 
         <!-- 3. TEAM -->
-        <div class="panel">
+        <div class="panel pricing-card">
           <p class="panelTitle">Team</p>
-          <div class="kv">
-            <div class="kvRow">
-              <div class="kvKey">Capacity</div>
-              <div class="kvVal">10 Mailboxes</div>
-            </div>
-            <div class="kvRow">
-              <div class="kvKey">Includes</div>
-              <div class="kvVal">Shared Database</div>
-            </div>
-            <div class="kvRow">
-              <div class="kvKey">Price</div>
-              <div class="kvVal">$50 / mo</div>
-            </div>
+          <div class="price-tag">
+            <span class="price-value">$50</span>
+            <span class="price-period">/ month</span>
           </div>
-
-          <div class="btnrow" style="margin-top:14px">
-            <a class="btnGhost" href="contact.html">Contact Sales</a>
+          <ul class="feature-list">
+            <li class="feature-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              10 Team Mailboxes
+            </li>
+            <li class="feature-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              Shared Cloud Database
+            </li>
+            <li class="feature-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              Team Permissions
+            </li>
+          </ul>
+          <div class="btnrow" style="margin-top:auto">
+            <a class="btnGhost" href="contact.html" style="width:100%">Contact Sales</a>
           </div>
         </div>
 
         <!-- 4. ENTERPRISE -->
-        <div class="panel">
+        <div class="panel pricing-card">
           <p class="panelTitle">Enterprise</p>
-          <div class="kv">
-            <div class="kvRow">
-              <div class="kvKey">Capacity</div>
-              <div class="kvVal">Unlimited</div>
-            </div>
-            <div class="kvRow">
-              <div class="kvKey">Includes</div>
-              <div class="kvVal">SSO + SLA Support</div>
-            </div>
-            <div class="kvRow">
-              <div class="kvKey">Price</div>
-              <div class="kvVal">Custom</div>
-            </div>
+          <div class="price-tag">
+            <span class="price-value">Custom</span>
           </div>
-
-          <div class="btnrow" style="margin-top:14px">
-            <a class="btnGhost" href="contact.html">Enquire</a>
-          </div>
-        </div>
-      </div>
-
-      <div style="height:16px"></div>
-
-      <div class="panel">
-        <p class="panelTitle">Notes</p>
-        <div class="kv">
-
-          <div class="kvRow">
-            <div class="kvKey">Billing</div>
-            <div class="kvVal">Only for team deployments</div>
-          </div>
-          <div class="kvRow">
-            <div class="kvKey">Support</div>
-            <div class="kvVal">Email support available</div>
+          <ul class="feature-list">
+            <li class="feature-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              Unlimited Scale
+            </li>
+            <li class="feature-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              SSO & SAML Auth
+            </li>
+            <li class="feature-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              Dedicated Support
+            </li>
+          </ul>
+          <div class="btnrow" style="margin-top:auto">
+            <a class="btnGhost" href="contact.html" style="width:100%">Enquire</a>
           </div>
         </div>
       </div>
+
     </div>
 
     <div class="footer">
       <div>© <span id="y"></span> SIGBOT</div>
-      <div class="small"><a href="download.html">Download</a> · <a href="contact.html">Contact</a></div>
+      <div class="small"><a href="download.html">Download</a> · <a href="terms.html">Terms</a> · <a
+          href="privacy.html">Privacy</a> · <a href="security.html">Security</a> · <a href="dpa.html">DPA</a> · <a
+          href="contact.html">Contact</a></div>
     </div>
 
   </div>
