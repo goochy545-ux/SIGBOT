@@ -5,9 +5,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Sigbot | Outlook Email Signature to Contact Database</title>
+  <title>Sigbot | Email Signature to Contact Database</title>
   <meta name="description"
-    content="Sigbot extracts contact details from Outlook email signatures and builds a clean, local contact database for project teams that live in email." />
+    content="Sigbot extracts contact details from email signatures across Outlook, Gmail, and IMAP and builds a searchable contact database for teams that live in email." />
 
   <link rel="canonical" href="https://sigbot.ca/" />
   <meta name="robots" content="index,follow" />
@@ -22,9 +22,9 @@
   <link rel="stylesheet" href="assets/styles.css" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Sigbot | Outlook Email Signature to Contact Database" />
+  <meta property="og:title" content="Sigbot | Email Signature to Contact Database" />
   <meta property="og:description"
-    content="Turn Outlook email signatures into a clean, local contact database. Built for teams that live in email." />
+    content="Turn email signatures into a searchable contact database. Supports Outlook, Gmail, and IMAP. Built for teams that live in email." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://sigbot.ca/" />
   <meta property="og:image" content="https://sigbot.ca/assets/icons/robot.svg" />
@@ -39,9 +39,9 @@
     "@type": "SoftwareApplication",
     "name": "Sigbot",
     "applicationCategory": "ProductivityApplication",
-    "operatingSystem": "Windows, macOS",
+    "operatingSystem": "Windows, macOS, iOS, Android",
     "url": "https://sigbot.ca/",
-    "description": "Extracts contact details from Outlook email signatures and creates a local contact database."
+    "description": "Extracts contact details from email signatures across Outlook, Gmail, and IMAP and creates a searchable contact database."
   }
   </script>
 </head>
@@ -78,7 +78,8 @@
         Extract contacts from emails.
       </h1>
 
-      <p class="pageSub">Extract contacts from email signatures. Build your contact database automatically.</p>
+      <p class="pageSub">Pull contacts from email signatures across Outlook, Gmail, and IMAP. Build your database
+        automatically.</p>
 
       <div class="loading-container">
         <div class="loading-status">
@@ -163,24 +164,24 @@
                     <!-- Mock List Items -->
                     <div
                       style="display: flex; justify-content: space-between; padding: 12px; background: rgba(255,255,255,0.03); border-radius: 6px; align-items: center;">
-                      <div style="font-weight: 500; font-size: 14px;">David Miller <span
-                          style="color: #666; margin-left: 8px; font-size: 12px;">Acme Corp</span></div>
+                      <div style="font-weight: 500; font-size: 14px;">Marcus Holloway <span
+                          style="color: #666; margin-left: 8px; font-size: 12px;">Westpoint Engineering</span></div>
                       <div
                         style="font-size: 11px; padding: 4px 8px; background: rgba(16, 185, 129, 0.2); color: #10b981; border-radius: 4px;">
                         VERIFIED</div>
                     </div>
                     <div
                       style="display: flex; justify-content: space-between; padding: 12px; background: rgba(255,255,255,0.03); border-radius: 6px; align-items: center;">
-                      <div style="font-weight: 500; font-size: 14px;">Sarah Jenkins <span
-                          style="color: #666; margin-left: 8px; font-size: 12px;">Google</span></div>
+                      <div style="font-weight: 500; font-size: 14px;">Priya Kavanaugh <span
+                          style="color: #666; margin-left: 8px; font-size: 12px;">Clearwater Industries</span></div>
                       <div
                         style="font-size: 11px; padding: 4px 8px; background: rgba(16, 185, 129, 0.2); color: #10b981; border-radius: 4px;">
                         VERIFIED</div>
                     </div>
                     <div
                       style="display: flex; justify-content: space-between; padding: 12px; background: rgba(255,255,255,0.03); border-radius: 6px; align-items: center;">
-                      <div style="font-weight: 500; font-size: 14px;">Mike Ross <span
-                          style="color: #666; margin-left: 8px; font-size: 12px;">Pearson Hardman</span></div>
+                      <div style="font-weight: 500; font-size: 14px;">Elena Driscoll <span
+                          style="color: #666; margin-left: 8px; font-size: 12px;">Summit Group Companies</span></div>
                       <div
                         style="font-size: 11px; padding: 4px 8px; background: rgba(16, 185, 129, 0.2); color: #10b981; border-radius: 4px;">
                         VERIFIED</div>
@@ -219,8 +220,8 @@
           </div>
         </div>
         <h3 class="hiw-title">Capture signatures</h3>
-        <p class="hiw-desc">Pull signature blocks from incoming Outlook email threads without interrupting the inbox
-          workflow.</p>
+        <p class="hiw-desc">Pull signature blocks from Outlook, Gmail, and IMAP email threads without interrupting the
+          inbox workflow.</p>
       </div>
       <div class="hiw-card">
         <div class="hiw-card-header">

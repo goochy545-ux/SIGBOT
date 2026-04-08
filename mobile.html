@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Sigbot | Mobile App</title>
     <meta name="description"
-        content="Sigbot Mobile: Access your contact database, search, map, and scan cards on the go." />
+        content="Sigbot Mobile: Access your contact database, search, map, scan business cards, and share your profile via QR code on the go." />
     <link rel="stylesheet" href="assets/styles.css" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
@@ -40,7 +40,8 @@
                 Your Database,<br>On the Go.
             </h1>
             <p class="sub heroSub">
-                Take your project network with you. Search contacts, view maps, and scan business cards from anywhere.
+                Take your contact database with you. Search contacts, view maps, scan business cards, and share your
+                profile via QR code.
             </p>
             <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
                 <a class="store-btn" href="#">
@@ -170,18 +171,20 @@
                             <div class="app-header-overlay">Scan Card</div>
                         </div>
 
-                        <!-- Screen 5: Sync -->
+                        <!-- Screen 5: Profile -->
                         <div class="app-screen screen-sync">
                             <div class="app-header">
-                                <div>iPhone Sync</div>
+                                <div>My Profile</div>
                             </div>
                             <div style="text-align: center; margin-top: 40px; padding: 0 20px;">
-                                <div class="sync-status-icon">⚡</div>
-                                <div class="sync-bar-container">
-                                    <div class="sync-bar-fill"></div>
+                                <div class="sync-status-icon">📇</div>
+                                <div style="font-size: 18px; font-weight: 600; margin-bottom: 8px;">Your vCard QR Code
                                 </div>
-                                <div class="sync-status-text">Merging 2,540 contacts...</div>
-                                <div class="sync-success-note">Success! Contacts added to your iPhone address book.
+                                <div style="font-size: 13px; color: #888; margin-bottom: 20px;">Share your contact info
+                                    by letting others scan your QR code.</div>
+                                <div
+                                    style="width: 120px; height: 120px; border: 2px solid #3b82f6; border-radius: 12px; margin: 0 auto; display: flex; align-items: center; justify-content: center; background: rgba(59,130,246,0.1);">
+                                    <span style="font-size: 48px;">📱</span>
                                 </div>
                             </div>
                         </div>
@@ -192,7 +195,7 @@
                             <div class="nav-item">👥</div>
                             <div class="nav-item">🗺️</div>
                             <div class="nav-item">📷</div>
-                            <div class="nav-item">⚡</div>
+                            <div class="nav-item">📇</div>
                         </div>
 
                     </div>
@@ -223,9 +226,9 @@
                 </div>
 
                 <div class="step" data-screen="screen-sync">
-                    <h2>iPhone Sync</h2>
-                    <p>Seamlessly merge Sigbot contacts into your iPhone's native address book for easier calling and
-                        caller ID recognition.</p>
+                    <h2>Profile & QR Code</h2>
+                    <p>Create your personal profile card and generate a vCard QR code so others can scan and save your
+                        contact details instantly.</p>
                 </div>
             </div>
         </div>
