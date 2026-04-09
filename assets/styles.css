@@ -1049,10 +1049,29 @@ a:hover {
   padding-top: 40px;
   border-top: 1px solid var(--line);
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  gap: 20px;
   color: var(--muted);
   font-size: 14px;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.footer-legal {
+  width: 100%;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+  font-size: 11px;
+  color: rgba(161, 161, 170, 0.6);
+  line-height: 1.6;
+  text-align: center;
 }
 
 /* ANIMATIONS */
