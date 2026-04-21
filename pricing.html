@@ -21,6 +21,254 @@
   <meta property="og:image" content="https://sigbot.ca/assets/icons/robot.svg" />
 
   <meta name="twitter:card" content="summary" />
+
+  <style>
+    /* Billing toggle */
+    .billing-toggle-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      margin: 28px 0 48px;
+    }
+
+    .billing-label {
+      font-size: 14px;
+      color: var(--muted);
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+
+    .billing-label.active {
+      color: var(--fg);
+      font-weight: 600;
+    }
+
+    .toggle-switch {
+      position: relative;
+      width: 44px;
+      height: 24px;
+      cursor: pointer;
+    }
+
+    .toggle-switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .toggle-track {
+      position: absolute;
+      inset: 0;
+      background: var(--line);
+      border-radius: 12px;
+      transition: background 0.2s;
+    }
+
+    .toggle-track::after {
+      content: '';
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 18px;
+      height: 18px;
+      background: var(--fg);
+      border-radius: 50%;
+      transition: transform 0.2s;
+    }
+
+    .toggle-switch input:checked + .toggle-track {
+      background: var(--accent);
+    }
+
+    .toggle-switch input:checked + .toggle-track::after {
+      transform: translateX(20px);
+    }
+
+    .annual-badge {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #22c55e;
+      background: rgba(34, 197, 94, 0.12);
+      border: 1px solid rgba(34, 197, 94, 0.25);
+      border-radius: 6px;
+      padding: 2px 8px;
+    }
+
+    /* 3-column pricing grid */
+    .pricingGrid3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      align-items: start;
+    }
+
+    @media (max-width: 900px) {
+      .pricingGrid3 { grid-template-columns: 1fr; max-width: 440px; margin: 0 auto; }
+    }
+
+    .plan-tagline {
+      font-size: 13px;
+      color: var(--muted);
+      margin: 0 0 4px;
+      min-height: 36px;
+    }
+
+    .price-original {
+      font-size: 13px;
+      color: var(--muted);
+      text-decoration: line-through;
+      margin-left: 4px;
+      display: none;
+    }
+
+    .price-original.show { display: inline; }
+
+    .annual-savings {
+      font-size: 12px;
+      color: #22c55e;
+      font-weight: 600;
+      margin-left: 6px;
+      display: none;
+    }
+
+    .annual-savings.show { display: inline; }
+
+    .feature-item svg {
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
+      color: var(--accent);
+    }
+
+    .feature-item.muted-item svg {
+      color: #3f3f46;
+    }
+
+    .feature-item.muted-item {
+      color: #52525b;
+    }
+
+    /* Section divider */
+    .section-rule {
+      border: none;
+      border-top: 1px solid var(--line);
+      margin: 64px 0 48px;
+    }
+
+    /* Comparison table */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      margin-top: 8px;
+    }
+
+    .compare-table thead th {
+      padding: 12px 16px;
+      text-align: center;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .compare-table thead th:first-child {
+      text-align: left;
+    }
+
+    .compare-table thead th.col-highlight {
+      color: var(--accent);
+    }
+
+    .compare-table tbody tr {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .compare-table tbody tr:last-child {
+      border-bottom: none;
+    }
+
+    .compare-table tbody tr:hover {
+      background: rgba(255,255,255,0.02);
+    }
+
+    .compare-table td {
+      padding: 12px 16px;
+      text-align: center;
+      color: var(--muted);
+    }
+
+    .compare-table td:first-child {
+      text-align: left;
+      color: var(--fg);
+      font-weight: 500;
+    }
+
+    .compare-table td.col-highlight {
+      background: rgba(59,130,246,0.04);
+    }
+
+    .compare-table .section-head td {
+      padding: 20px 16px 8px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #52525b;
+      border-bottom: none;
+    }
+
+    .check-yes { color: var(--accent); font-size: 16px; }
+    .check-no  { color: #3f3f46; font-size: 16px; }
+
+    /* Trust row */
+    .trust-row {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
+      margin: 48px 0 0;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .trust-item svg {
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
+      color: #52525b;
+    }
+
+    /* Bottom CTA */
+    .pricing-cta {
+      text-align: center;
+      padding: 72px 0 40px;
+    }
+
+    .pricing-cta h2 {
+      font-size: 32px;
+      font-weight: 800;
+      margin: 0 0 12px;
+      letter-spacing: -0.03em;
+    }
+
+    .pricing-cta p {
+      font-size: 16px;
+      color: var(--muted);
+      margin: 0 0 32px;
+    }
+  </style>
 </head>
 
 <body>
@@ -37,164 +285,369 @@
         <a href="index.html">Home</a>
         <a href="desktop.html">Desktop App</a>
         <a href="mobile.html">Mobile App</a>
+        <a href="webapp.html">Web App</a>
         <a href="construction.html">Construction</a>
         <a href="demo.html">Demo</a>
         <a href="download.html">Download</a>
         <a class="active" href="pricing.html">Pricing</a>
         <a href="faq.html">FAQ</a>
         <a href="contact.html">Contact</a>
+        <a class="cta" href="https://sigbot-ten.vercel.app/login">Log In</a>
       </div>
     </div>
 
     <div class="page" style="text-align: center;">
-      <h1 class="pageTitle">Pricing</h1>
 
-      <div class="pricingGrid">
-        <!-- 1. FREE -->
+      <h1 class="pageTitle">Simple, transparent pricing</h1>
+      <p class="pageSub" style="margin-bottom: 0;">Start free. Upgrade when you need more.</p>
+
+      <!-- Billing Toggle -->
+      <div class="billing-toggle-wrap">
+        <span class="billing-label active" id="label-monthly">Monthly</span>
+        <label class="toggle-switch">
+          <input type="checkbox" id="billing-toggle">
+          <span class="toggle-track"></span>
+        </label>
+        <span class="billing-label" id="label-annual">Annual <span class="annual-badge">Save 20%</span></span>
+      </div>
+
+      <!-- 3-Column Pricing Cards -->
+      <div class="pricingGrid3">
+
+        <!-- STARTER -->
         <div class="panel pricing-card">
-          <p class="panelTitle">Free</p>
+          <p class="panelTitle">Starter</p>
+          <p class="plan-tagline">For individuals testing the waters.</p>
           <div class="price-tag">
             <span class="price-value">$0</span>
             <span class="price-period">/ forever</span>
           </div>
           <ul class="feature-list">
             <li class="feature-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
-                stroke-linejoin="round">
-                <polyline points="20 6 9 17 4 12"></polyline>
-              </svg>
-              Up to 50 Contacts
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Up to 50 contacts
             </li>
             <li class="feature-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
-                stroke-linejoin="round">
-                <polyline points="20 6 9 17 4 12"></polyline>
-              </svg>
-              Core Signature Parsing
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              1 email account
             </li>
             <li class="feature-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
-                stroke-linejoin="round">
-                <polyline points="20 6 9 17 4 12"></polyline>
-              </svg>
-              CSV/Excel Export
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Email signature parsing
+            </li>
+            <li class="feature-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              CSV &amp; Excel export
+            </li>
+            <li class="feature-item muted-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              AI classification
+            </li>
+            <li class="feature-item muted-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              Cloud sync &amp; mobile
             </li>
           </ul>
           <div class="btnrow" style="margin-top:auto">
-            <a class="btnPrimary" href="download.html" style="width:100%">Download</a>
+            <a class="btnGhost" href="download.html" style="width:100%">Get started free</a>
           </div>
         </div>
 
-        <!-- 2. PREMIUM -->
-        <div class="panel pricing-card recommended">
+        <!-- PRO — Most Popular -->
+        <div class="panel pricing-card recommended" style="padding-top: 40px;">
           <div class="recommended-badge">Most Popular</div>
-          <p class="panelTitle">Premium</p>
-          <div class="price-tag">
-            <span class="price-value">$10</span>
-            <span class="price-period">/ month</span>
+          <p class="panelTitle">Pro</p>
+          <p class="plan-tagline">For professionals who run on relationships.</p>
+          <div class="price-tag" style="align-items: baseline; flex-wrap: wrap; gap: 4px;">
+            <span class="price-value" id="pro-price">$20</span>
+            <span class="price-period" id="pro-period">/ month</span>
+            <span class="price-original" id="pro-original">$20</span>
+            <span class="annual-savings" id="pro-savings">billed $192/yr</span>
           </div>
           <ul class="feature-list">
             <li class="feature-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
-                stroke-linejoin="round">
-                <polyline points="20 6 9 17 4 12"></polyline>
-              </svg>
-              Unlimited Contacts
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Unlimited contacts
             </li>
             <li class="feature-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
-                stroke-linejoin="round">
-                <polyline points="20 6 9 17 4 12"></polyline>
-              </svg>
-              Excel/CSV Bulk Import
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              3 email accounts (Outlook, Gmail, IMAP)
             </li>
             <li class="feature-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
-                stroke-linejoin="round">
-                <polyline points="20 6 9 17 4 12"></polyline>
-              </svg>
-              AI Classification
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              AI classification by sector &amp; type
             </li>
             <li class="feature-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
-                stroke-linejoin="round">
-                <polyline points="20 6 9 17 4 12"></polyline>
-              </svg>
-              Mobile App + QR Profile
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Cloud sync across all devices
+            </li>
+            <li class="feature-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Mobile app + interactive map
+            </li>
+            <li class="feature-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Bulk CSV/Excel import &amp; export
+            </li>
+            <li class="feature-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              QR profile &amp; vCard sharing
             </li>
           </ul>
           <div class="btnrow" style="margin-top:auto">
-            <a class="btnPrimary" href="#" style="width:100%">Upgrade now</a>
+            <a class="btnPrimary" href="https://sigbot-ten.vercel.app/login" style="width:100%">Start free trial</a>
           </div>
+          <p style="font-size: 12px; color: var(--muted); margin: 12px 0 0; text-align: center;">14-day free trial · No credit card required</p>
         </div>
 
-        <!-- 3. TEAM -->
+        <!-- TEAM -->
         <div class="panel pricing-card">
           <p class="panelTitle">Team</p>
-          <div class="price-tag">
-            <span class="price-value">$50</span>
-            <span class="price-period">/ month</span>
+          <p class="plan-tagline">For teams sharing one contact database.</p>
+          <div class="price-tag" style="align-items: baseline; flex-wrap: wrap; gap: 4px;">
+            <span class="price-value" id="team-price">$200</span>
+            <span class="price-period" id="team-period">/ month</span>
+            <span class="price-original" id="team-original">$200</span>
+            <span class="annual-savings" id="team-savings">billed $1,920/yr</span>
           </div>
+          <p style="font-size: 12px; color: var(--muted); margin: -20px 0 28px; text-align: left;">Up to 10 users · $6/user after</p>
           <ul class="feature-list">
             <li class="feature-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
-                stroke-linejoin="round">
-                <polyline points="20 6 9 17 4 12"></polyline>
-              </svg>
-              Unlimited Users
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Everything in Pro
             </li>
             <li class="feature-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
-                stroke-linejoin="round">
-                <polyline points="20 6 9 17 4 12"></polyline>
-              </svg>
-              Shared Folders
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Shared contact folders
             </li>
             <li class="feature-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
-                stroke-linejoin="round">
-                <polyline points="20 6 9 17 4 12"></polyline>
-              </svg>
-              Priority Support
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Team admin &amp; user management
+            </li>
+            <li class="feature-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Priority email support
+            </li>
+            <li class="feature-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Centralised billing
+            </li>
+            <li class="feature-item" style="color: var(--muted); font-style: italic;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              Custom integrations — coming soon
             </li>
           </ul>
           <div class="btnrow" style="margin-top:auto">
-            <a class="btnGhost" href="contact.html" style="width:100%">Contact Sales</a>
+            <a class="btnGhost" href="contact.html" style="width:100%">Talk to sales</a>
           </div>
         </div>
 
-        <!-- 4. ENTERPRISE -->
-        <div class="panel pricing-card">
-          <p class="panelTitle">Enterprise</p>
-          <div class="price-tag">
-            <span class="price-value">Custom</span>
+      </div>
+
+      <!-- Trust signals -->
+      <div class="trust-row">
+        <div class="trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          Cancel anytime
+        </div>
+        <div class="trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          GDPR compliant
+        </div>
+        <div class="trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          14-day free trial on Pro
+        </div>
+        <div class="trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          No credit card required
+        </div>
+      </div>
+
+      <hr class="section-rule">
+
+      <!-- Feature Comparison Table -->
+      <div style="text-align: left;">
+        <h2 style="font-size: 24px; font-weight: 800; margin: 0 0 4px; letter-spacing: -0.03em;">Full feature comparison</h2>
+        <p style="font-size: 14px; color: var(--muted); margin: 0 0 32px;">Everything you get on each plan.</p>
+
+        <div style="overflow-x: auto;">
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th style="width: 40%;">Feature</th>
+                <th>Starter</th>
+                <th class="col-highlight">Pro</th>
+                <th>Team</th>
+              </tr>
+            </thead>
+            <tbody>
+
+              <tr class="section-head"><td colspan="4">Contacts &amp; Accounts</td></tr>
+              <tr>
+                <td>Contact limit</td>
+                <td>50</td>
+                <td class="col-highlight">Unlimited</td>
+                <td>Unlimited</td>
+              </tr>
+              <tr>
+                <td>Email accounts</td>
+                <td>1</td>
+                <td class="col-highlight">3</td>
+                <td>Unlimited</td>
+              </tr>
+              <tr>
+                <td>Supported providers</td>
+                <td>Outlook</td>
+                <td class="col-highlight">Outlook, Gmail, IMAP</td>
+                <td>Outlook, Gmail, IMAP</td>
+              </tr>
+              <tr>
+                <td>Automatic deduplication</td>
+                <td><span class="check-yes">✓</span></td>
+                <td class="col-highlight"><span class="check-yes">✓</span></td>
+                <td><span class="check-yes">✓</span></td>
+              </tr>
+
+              <tr class="section-head"><td colspan="4">Intelligence</td></tr>
+              <tr>
+                <td>Email signature parsing</td>
+                <td><span class="check-yes">✓</span></td>
+                <td class="col-highlight"><span class="check-yes">✓</span></td>
+                <td><span class="check-yes">✓</span></td>
+              </tr>
+              <tr>
+                <td>AI sector &amp; type classification</td>
+                <td><span class="check-no">—</span></td>
+                <td class="col-highlight"><span class="check-yes">✓</span></td>
+                <td><span class="check-yes">✓</span></td>
+              </tr>
+              <tr>
+                <td>Business card scanning (mobile)</td>
+                <td><span class="check-no">—</span></td>
+                <td class="col-highlight"><span class="check-yes">✓</span></td>
+                <td><span class="check-yes">✓</span></td>
+              </tr>
+
+              <tr class="section-head"><td colspan="4">Data &amp; Export</td></tr>
+              <tr>
+                <td>CSV export</td>
+                <td><span class="check-yes">✓</span></td>
+                <td class="col-highlight"><span class="check-yes">✓</span></td>
+                <td><span class="check-yes">✓</span></td>
+              </tr>
+              <tr>
+                <td>Excel export</td>
+                <td><span class="check-yes">✓</span></td>
+                <td class="col-highlight"><span class="check-yes">✓</span></td>
+                <td><span class="check-yes">✓</span></td>
+              </tr>
+              <tr>
+                <td>Bulk CSV/Excel import</td>
+                <td><span class="check-no">—</span></td>
+                <td class="col-highlight"><span class="check-yes">✓</span></td>
+                <td><span class="check-yes">✓</span></td>
+              </tr>
+
+              <tr class="section-head"><td colspan="4">Platform &amp; Sync</td></tr>
+              <tr>
+                <td>Cloud sync</td>
+                <td><span class="check-no">—</span></td>
+                <td class="col-highlight"><span class="check-yes">✓</span></td>
+                <td><span class="check-yes">✓</span></td>
+              </tr>
+              <tr>
+                <td>Desktop app (Mac &amp; Windows)</td>
+                <td><span class="check-yes">✓</span></td>
+                <td class="col-highlight"><span class="check-yes">✓</span></td>
+                <td><span class="check-yes">✓</span></td>
+              </tr>
+              <tr>
+                <td>Mobile app (iOS &amp; Android)</td>
+                <td><span class="check-no">—</span></td>
+                <td class="col-highlight"><span class="check-yes">✓</span></td>
+                <td><span class="check-yes">✓</span></td>
+              </tr>
+              <tr>
+                <td>Interactive contact map</td>
+                <td><span class="check-no">—</span></td>
+                <td class="col-highlight"><span class="check-yes">✓</span></td>
+                <td><span class="check-yes">✓</span></td>
+              </tr>
+              <tr>
+                <td>QR profile &amp; vCard sharing</td>
+                <td><span class="check-no">—</span></td>
+                <td class="col-highlight"><span class="check-yes">✓</span></td>
+                <td><span class="check-yes">✓</span></td>
+              </tr>
+
+              <tr class="section-head"><td colspan="4">Team</td></tr>
+              <tr>
+                <td>Shared contact folders</td>
+                <td><span class="check-no">—</span></td>
+                <td class="col-highlight"><span class="check-no">—</span></td>
+                <td><span class="check-yes">✓</span></td>
+              </tr>
+              <tr>
+                <td>User management &amp; admin controls</td>
+                <td><span class="check-no">—</span></td>
+                <td class="col-highlight"><span class="check-no">—</span></td>
+                <td><span class="check-yes">✓</span></td>
+              </tr>
+              <tr>
+                <td>Centralised billing</td>
+                <td><span class="check-no">—</span></td>
+                <td class="col-highlight"><span class="check-no">—</span></td>
+                <td><span class="check-yes">✓</span></td>
+              </tr>
+              <tr>
+                <td>Priority support</td>
+                <td><span class="check-no">—</span></td>
+                <td class="col-highlight"><span class="check-no">—</span></td>
+                <td><span class="check-yes">✓</span></td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <hr class="section-rule">
+
+      <!-- FAQ -->
+      <div style="text-align: left; max-width: 640px; margin: 0 auto;">
+        <h2 style="font-size: 24px; font-weight: 800; margin: 0 0 32px; letter-spacing: -0.03em; text-align: center;">Common questions</h2>
+        <div class="kv">
+          <div class="kvRow">
+            <div class="kvKey">Do I need a credit card to start?</div>
+            <div class="kvVal">No. The Starter plan is free forever. Pro and Team trials require no payment details upfront — you're prompted when the trial ends.</div>
           </div>
-          <ul class="feature-list">
-            <li class="feature-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
-                stroke-linejoin="round">
-                <polyline points="20 6 9 17 4 12"></polyline>
-              </svg>
-              Unlimited Scale
-            </li>
-            <li class="feature-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
-                stroke-linejoin="round">
-                <polyline points="20 6 9 17 4 12"></polyline>
-              </svg>
-              Custom Integrations
-            </li>
-            <li class="feature-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
-                stroke-linejoin="round">
-                <polyline points="20 6 9 17 4 12"></polyline>
-              </svg>
-              Dedicated Account Manager
-            </li>
-          </ul>
-          <div class="btnrow" style="margin-top:auto">
-            <a class="btnGhost" href="contact.html" style="width:100%">Enquire</a>
+          <div class="kvRow">
+            <div class="kvKey">What happens when I hit the 50-contact limit?</div>
+            <div class="kvVal">Sigbot stops adding new contacts. Your existing 50 are safe. Upgrade to Pro to remove the limit instantly.</div>
           </div>
+          <div class="kvRow">
+            <div class="kvKey">Can I switch plans at any time?</div>
+            <div class="kvVal">Yes. Upgrade or downgrade whenever you like. If you downgrade, your data is preserved — contacts above the new limit are hidden until you upgrade again.</div>
+          </div>
+          <div class="kvRow">
+            <div class="kvKey">Is there a discount for annual billing?</div>
+            <div class="kvVal">Yes — toggle to annual above to save 20% on Pro ($192/yr) and Team ($1,920/yr).</div>
+          </div>
+          <div class="kvRow">
+            <div class="kvKey">How does Team pricing work beyond 10 users?</div>
+            <div class="kvVal">The Team plan includes up to 10 users. Additional seats are $6/user/month. Contact us for larger deployments.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom CTA -->
+      <div class="pricing-cta">
+        <h2>Still not sure?</h2>
+        <p>Try Sigbot free — no credit card, no commitment.</p>
+        <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+          <a class="btnPrimary" href="download.html" style="padding: 14px 32px;">Download free</a>
+          <a class="btnGhost" href="contact.html" style="padding: 14px 32px;">Talk to us</a>
         </div>
       </div>
 
@@ -216,6 +669,51 @@
 
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
+
+    const toggle = document.getElementById("billing-toggle");
+    const labelMonthly = document.getElementById("label-monthly");
+    const labelAnnual = document.getElementById("label-annual");
+
+    const proPrice   = document.getElementById("pro-price");
+    const proPeriod  = document.getElementById("pro-period");
+    const proOrig    = document.getElementById("pro-original");
+    const proSavings = document.getElementById("pro-savings");
+
+    const teamPrice   = document.getElementById("team-price");
+    const teamPeriod  = document.getElementById("team-period");
+    const teamOrig    = document.getElementById("team-original");
+    const teamSavings = document.getElementById("team-savings");
+
+    toggle.addEventListener("change", () => {
+      const annual = toggle.checked;
+
+      labelMonthly.classList.toggle("active", !annual);
+      labelAnnual.classList.toggle("active", annual);
+
+      if (annual) {
+        proPrice.textContent   = "$16";
+        proPeriod.textContent  = "/ month";
+        proOrig.textContent    = "$20";
+        proOrig.classList.add("show");
+        proSavings.classList.add("show");
+
+        teamPrice.textContent   = "$160";
+        teamPeriod.textContent  = "/ month";
+        teamOrig.textContent    = "$200";
+        teamOrig.classList.add("show");
+        teamSavings.classList.add("show");
+      } else {
+        proPrice.textContent   = "$20";
+        proPeriod.textContent  = "/ month";
+        proOrig.classList.remove("show");
+        proSavings.classList.remove("show");
+
+        teamPrice.textContent   = "$200";
+        teamPeriod.textContent  = "/ month";
+        teamOrig.classList.remove("show");
+        teamSavings.classList.remove("show");
+      }
+    });
   </script>
 </body>
 
