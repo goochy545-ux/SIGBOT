@@ -24,7 +24,7 @@
             </div>
             <div class="navlinks">
                 <a href="index.html">Home</a>
-                <div class="nav-dropdown"><a href="#" class="nav-dropdown-toggle active">Products</a><div class="nav-dropdown-menu"><a href="desktop.html" class="active">Desktop App</a><a href="mobile.html">Mobile App</a><a href="webapp.html">Web App</a></div></div>
+                <div class="nav-dropdown"><button class="nav-dropdown-toggle active">Products</button><div class="nav-dropdown-menu"><a href="desktop.html" class="active">Desktop App</a><a href="mobile.html">Mobile App</a><a href="webapp.html">Web App</a></div></div>
                 <a href="construction.html">Construction</a>
                 <a href="demo.html">Demo</a>
                 <a href="download.html">Download</a>
@@ -158,6 +158,22 @@
     <script>
         document.getElementById("y").textContent = new Date().getFullYear();
     </script>
+  <script>
+    (function() {
+      var toggle = document.querySelector('.nav-dropdown-toggle');
+      var menu   = document.querySelector('.nav-dropdown-menu');
+      if (!toggle || !menu) return;
+      toggle.addEventListener('click', function(e) {
+        e.stopPropagation();
+        var open = menu.classList.toggle('open');
+        toggle.classList.toggle('open', open);
+      });
+      document.addEventListener('click', function() {
+        menu.classList.remove('open');
+        toggle.classList.remove('open');
+      });
+    })();
+  </script>
 </body>
 
 </html>
