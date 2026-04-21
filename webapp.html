@@ -611,7 +611,8 @@
       var hamburger = document.querySelector('.nav-hamburger');
       var navlinks  = document.querySelector('.navlinks');
       if (hamburger && navlinks) {
-        hamburger.addEventListener('click', function() {
+        hamburger.addEventListener('click', function(e) {
+          e.stopPropagation();
           var open = navlinks.classList.toggle('open');
           hamburger.classList.toggle('open', open);
           hamburger.setAttribute('aria-expanded', open);
@@ -626,10 +627,14 @@
           var open = menu.classList.toggle('open');
           toggle.classList.toggle('open', open);
         });
+        // Prevent clicks inside the menu from bubbling to the document handler
+        // so the link navigates before the menu is torn down
+        menu.addEventListener('click', function(e) {
+          e.stopPropagation();
+        });
         document.addEventListener('click', function() {
           menu.classList.remove('open');
           toggle.classList.remove('open');
-          // Don't close navlinks on outside click — user may be tapping elsewhere
         });
       }
     })();

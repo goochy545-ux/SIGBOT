@@ -63,6 +63,8 @@ a:hover {
   justify-content: space-between;
   padding: 20px 0;
   margin-bottom: 40px;
+  position: relative;
+  z-index: 200;
   /* border-bottom: 1px solid var(--line); Remove border for cleaner look */
 }
 
