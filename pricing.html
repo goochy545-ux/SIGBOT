@@ -13,6 +13,7 @@
   <meta name="robots" content="index,follow" />
 
   <link rel="stylesheet" href="assets/styles.css" />
+  <script src="https://cdn.paddle.com/paddle/v2/paddle.js"></script>
 
   <meta property="og:title" content="Pricing | Sigbot" />
   <meta property="og:description" content="Simple pricing for Sigbot email signature contact extraction." />
@@ -394,7 +395,7 @@
             </li>
           </ul>
           <div class="btnrow" style="margin-top:auto">
-            <a class="btnPrimary" href="https://sigbot-ten.vercel.app/login" style="width:100%">Start free trial</a>
+            <button class="btnPrimary" id="pro-checkout-btn" style="width:100%;cursor:pointer;border:none;">Start free trial</button>
           </div>
           <p style="font-size: 12px; color: var(--muted); margin: 12px 0 0; text-align: center;">30-day money-back guarantee · No credit card required</p>
         </div>
@@ -666,6 +667,28 @@
 
   </div>
 
+  <script>
+    Paddle.Initialize({
+      token: 'live_5ccca908a5ed4850c510274c3e2',
+      eventCallback: function(event) {
+        if (event.name === 'checkout.completed') {
+          window.location.href = 'https://sigbot-ten.vercel.app/dashboard';
+        }
+      }
+    });
+
+    var PRICE_IDS = {
+      monthly: 'pri_01kpq42h593dy8h8s01cb9bxes',
+      annual:  'pri_01kpq6tvcwxkntrdra0781evfk'
+    };
+
+    document.getElementById('pro-checkout-btn').addEventListener('click', function() {
+      var isAnnual = document.getElementById('billing-toggle').checked;
+      Paddle.Checkout.open({
+        items: [{ priceId: isAnnual ? PRICE_IDS.annual : PRICE_IDS.monthly, quantity: 1 }]
+      });
+    });
+  </script>
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
 
