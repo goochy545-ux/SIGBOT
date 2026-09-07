@@ -77,11 +77,13 @@
     /* The prices in the markup, as strings, so the renderer has one code
        path whether or not Paddle answered. These must stay in step with
        pricing.html. */
+    /* sigbot:pricing:static-prices:start */
     var STATIC = {
       individual:   { monthly: '$50', annualMonthly: '$42', annualTotal: '$500' },
       starter:      { annualTotal: '$2,500' },
       professional: { annualTotal: '$10,000' }
     };
+    /* sigbot:pricing:static-prices:end */
 
     // Filled in once Paddle answers; null means "render the USD markup".
     var LOCAL = null;
