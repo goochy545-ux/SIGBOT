@@ -22,7 +22,7 @@
   var TOKEN = 'live_5ccca908a5ed4850c510274c3e2';
   var INDIVIDUAL_MONTHLY = 'pri_01m1k1fmh4jvpst9t6gqmdb5zb';
 
-  var CACHE_KEY   = 'sigbot.localPrice.v4';
+  var CACHE_KEY   = 'sigbot.localPrice.v5';
   var COUNTRY_KEY = 'sigbot.country';
   var CACHE_TTL   = 24 * 60 * 60 * 1000;
 

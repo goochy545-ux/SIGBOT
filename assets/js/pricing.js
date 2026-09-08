@@ -322,7 +322,7 @@
         // The "from $50/month" teasers on other pages read this instead
         // of loading paddle.js themselves. See price-teaser.js.
         try {
-          localStorage.setItem('sigbot.localPrice.v4', JSON.stringify({
+          localStorage.setItem('sigbot.localPrice.v5', JSON.stringify({
             country: LOCAL.country,
             individualMonthly: money(LOCAL.individual.monthly),
             ts: Date.now()
